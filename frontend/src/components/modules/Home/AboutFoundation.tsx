@@ -115,7 +115,7 @@ export default function AboutFoundation() {
               contribute, and build a better future.
             </p>
 
-            <Button asChild className="mt-7 rounded-full">
+            <Button className="mt-7 rounded-full">
               <Link href="/about">
                 Learn More
                 <ArrowUpRight className="ml-2 h-4 w-4" />

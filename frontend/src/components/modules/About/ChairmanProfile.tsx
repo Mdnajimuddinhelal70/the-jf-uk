@@ -1,0 +1,199 @@
+import {
+  ArrowRight,
+  Award,
+  GraduationCap,
+  HeartHandshake,
+  MapPin,
+  Quote,
+} from "lucide-react";
+
+import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
+
+export default function ChairmanProfile() {
+  return (
+    <section className="relative overflow-hidden bg-background py-20 sm:py-24 lg:py-28">
+      {/* Background decoration */}
+      <div className="pointer-events-none absolute -left-40 top-20 h-80 w-80 rounded-full bg-primary/5 blur-3xl" />
+
+      <div className="pointer-events-none absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
+
+      <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Heading */}
+        <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-16">
+          <Badge
+            variant="outline"
+            className="rounded-full border-primary/20 bg-primary/5 px-4 py-1.5 text-primary"
+          >
+            <HeartHandshake className="mr-2 h-4 w-4" />
+            Our Leadership
+          </Badge>
+
+          <h2 className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+            Meet Our <span className="text-primary">Chairman</span>
+          </h2>
+
+          <p className="mt-5 text-base leading-7 text-muted-foreground sm:text-lg">
+            Guided by experience, dedication, and a vision for positive change,
+            our chairman leads the foundation with purpose and compassion.
+          </p>
+        </div>
+
+        {/* Main Profile */}
+        <div className="overflow-hidden rounded-3xl border bg-card shadow-sm">
+          <div className="grid lg:grid-cols-[0.85fr_1.15fr]">
+            {/* Chairman Image */}
+            <div className="relative min-h-[520px] overflow-hidden bg-muted sm:min-h-[620px] lg:min-h-[700px]">
+              <Image
+                src="https://res.cloudinary.com/dpgjlcycl/image/upload/v1786803130/ChairmanImg_mlerq7.jpg"
+                alt="Chairman of the Foundation"
+                className="absolute inset-0 h-full w-full object-cover object-top"
+                width={800}
+                height={1000}
+                priority
+              />
+
+              {/* Image overlay */}
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-6 sm:p-8">
+                <div className="text-white">
+                  <p className="text-sm font-medium text-white/70">
+                    Chairman & Founder
+                  </p>
+
+                  <h3 className="mt-1 text-2xl font-bold sm:text-3xl">
+                    Mr. Alhaz Lacky Miah.
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-14">
+              {/* Quote */}
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10">
+                <Quote className="h-6 w-6 text-primary" />
+              </div>
+
+              <blockquote className="mt-5 text-xl font-medium leading-8 tracking-tight sm:text-2xl">
+                “Together, we can create opportunities, empower communities, and
+                build a future where everyone has the chance to thrive.”
+              </blockquote>
+
+              {/* Name */}
+              <div className="mt-8">
+                <p className="text-sm font-medium uppercase tracking-[0.18em] text-primary">
+                  Chairman&apos;s Profile
+                </p>
+
+                <h3 className="mt-2 text-3xl font-bold tracking-tight">
+                  Mr. Alhaz Lacky Miah
+                </h3>
+
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Chairman & Founder, Your Foundation
+                </p>
+              </div>
+
+              {/* Biography */}
+              <div className="mt-7">
+                <p className="text-sm leading-7 text-muted-foreground sm:text-base">
+                  Mr. Alhaz Lacky Miah is a dedicated community leader committed
+                  to creating meaningful opportunities and supporting
+                  sustainable development. Through his leadership and
+                  experience, he has helped guide the foundation toward
+                  initiatives focused on community empowerment, education, and
+                  social development.
+                </p>
+
+                <p className="mt-4 text-sm leading-7 text-muted-foreground sm:text-base">
+                  His leadership is built on the principles of integrity,
+                  compassion, collaboration, and service. He believes that
+                  lasting change becomes possible when people come together with
+                  a shared vision and a commitment to helping others.
+                </p>
+              </div>
+
+              {/* Details */}
+              <div className="mt-8 grid gap-4 border-t pt-7 sm:grid-cols-2">
+                {/* Education */}
+                <div className="flex gap-3">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                    <GraduationCap className="h-5 w-5 text-primary" />
+                  </div>
+
+                  <div>
+                    <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                      Education
+                    </p>
+
+                    <p className="mt-1 text-sm font-semibold">
+                      Master&apos;s Degree
+                    </p>
+                  </div>
+                </div>
+
+                {/* Experience */}
+                <div className="flex gap-3">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                    <Award className="h-5 w-5 text-primary" />
+                  </div>
+
+                  <div>
+                    <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                      Experience
+                    </p>
+
+                    <p className="mt-1 text-sm font-semibold">15+ Years</p>
+                  </div>
+                </div>
+
+                {/* Location */}
+                <div className="flex gap-3">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                    <MapPin className="h-5 w-5 text-primary" />
+                  </div>
+
+                  <div>
+                    <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                      Based In
+                    </p>
+
+                    <p className="mt-1 text-sm font-semibold">Bangladesh</p>
+                  </div>
+                </div>
+
+                {/* Leadership */}
+                <div className="flex gap-3">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                    <HeartHandshake className="h-5 w-5 text-primary" />
+                  </div>
+
+                  <div>
+                    <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                      Leadership
+                    </p>
+
+                    <p className="mt-1 text-sm font-semibold">
+                      Chairman & Founder
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* CTA */}
+              <div className="mt-8">
+                <a
+                  href="#chairman-message"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+                >
+                  Read Chairman&apos;s Message
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
