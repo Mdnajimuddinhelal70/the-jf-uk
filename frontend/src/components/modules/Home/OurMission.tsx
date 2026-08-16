@@ -1,3 +1,5 @@
+"use client";
+
 import {
   ArrowRight,
   HeartHandshake,
@@ -5,40 +7,42 @@ import {
   Sprout,
   UsersRound,
 } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 
-const missionItems = [
-  {
-    icon: UsersRound,
-    number: "01",
-    title: "Empower Communities",
-    description:
-      "We work to empower individuals and communities by creating opportunities, providing support, and encouraging meaningful participation.",
-  },
-  {
-    icon: Sprout,
-    number: "02",
-    title: "Create Lasting Impact",
-    description:
-      "Our goal is to build sustainable initiatives that create positive change today while making a difference for future generations.",
-  },
-  {
-    icon: Lightbulb,
-    number: "03",
-    title: "Inspire Positive Change",
-    description:
-      "We inspire people to take meaningful action, support one another, and become part of something bigger than themselves.",
-  },
-];
-
 export default function OurMission() {
+  const t = useTranslations("Home.OurMission");
+  const locale = useLocale();
+
+  const missionItems = [
+    {
+      icon: UsersRound,
+      number: "01",
+      title: t("items.empower.title"),
+      description: t("items.empower.description"),
+    },
+    {
+      icon: Sprout,
+      number: "02",
+      title: t("items.impact.title"),
+      description: t("items.impact.description"),
+    },
+    {
+      icon: Lightbulb,
+      number: "03",
+      title: t("items.inspire.title"),
+      description: t("items.inspire.description"),
+    },
+  ];
+
   return (
     <section className="relative overflow-hidden bg-muted/30 py-20 sm:py-24 lg:py-28">
       {/* Decorative background */}
       <div className="pointer-events-none absolute -left-32 top-20 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
+
       <div className="pointer-events-none absolute -right-32 bottom-20 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,18 +52,16 @@ export default function OurMission() {
             variant="outline"
             className="mb-4 rounded-full border-primary/20 bg-primary/5 px-4 py-1.5 text-primary"
           >
-            Our Mission
+            {t("badge")}
           </Badge>
 
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-            Turning Purpose Into{" "}
-            <span className="text-primary">Positive Impact</span>
+            {t("title")}{" "}
+            <span className="text-primary">{t("titleHighlight")}</span>
           </h2>
 
           <p className="mt-5 text-base leading-7 text-muted-foreground sm:text-lg">
-            Our mission is to create meaningful opportunities, empower
-            communities, and inspire people to work together toward a better and
-            more sustainable future.
+            {t("description")}
           </p>
         </div>
 
@@ -72,38 +74,36 @@ export default function OurMission() {
             </div>
 
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-              Our Purpose
+              {t("purpose")}
             </p>
 
             <h3 className="max-w-xl text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
-              Creating opportunities that make a real difference.
+              {t("heading")}
             </h3>
 
             <p className="mt-5 max-w-2xl leading-7 text-muted-foreground">
-              We believe meaningful change starts with people. Our foundation is
-              committed to bringing people together, supporting valuable
-              initiatives, and creating opportunities that can positively
-              transform individuals and communities.
+              {t("paragraphOne")}
             </p>
 
             <p className="mt-4 max-w-2xl leading-7 text-muted-foreground">
-              Every initiative we take is guided by compassion, integrity,
-              collaboration, and a commitment to creating lasting value.
+              {t("paragraphTwo")}
             </p>
 
             <Link
-              href="/mission"
+              href={`/${locale}/mission`}
               className="mt-8 inline-flex h-10 items-center justify-center rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground shadow-xs transition-colors hover:bg-primary/90"
             >
-              Explore Our Mission
+              {t("exploreMission")}
+
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </div>
 
-          {/* Right visual */}
+          {/* Right Visual */}
           <div className="relative flex min-h-[320px] items-center justify-center overflow-hidden bg-primary p-8">
             {/* Decorative circles */}
             <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full border border-primary-foreground/20" />
+
             <div className="absolute -bottom-24 -left-16 h-72 w-72 rounded-full border border-primary-foreground/20" />
 
             <div className="relative text-center text-primary-foreground">
@@ -112,11 +112,11 @@ export default function OurMission() {
               </div>
 
               <h4 className="mt-7 text-2xl font-bold sm:text-3xl">
-                Together, We Can
+                {t("togetherTitle")}
               </h4>
 
               <p className="mx-auto mt-3 max-w-sm text-sm leading-6 text-primary-foreground/80">
-                Empower people. Strengthen communities. Create lasting change.
+                {t("togetherDescription")}
               </p>
             </div>
           </div>

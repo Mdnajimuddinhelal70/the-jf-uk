@@ -1,0 +1,27 @@
+{
+  "badge": "Our Mission",
+  "title": "Turning Purpose Into",
+  "titleHighlight": "Positive Impact",
+  "description": "Our mission is to create meaningful opportunities, empower communities, and inspire people to work together toward a better and more sustainable future.",
+  "purpose": "Our Purpose",
+  "heading": "Creating opportunities that make a real difference.",
+  "paragraphOne": "We believe meaningful change starts with people. Our foundation is committed to bringing people together, supporting valuable initiatives, and creating opportunities that can positively transform individuals and communities.",
+  "paragraphTwo": "Every initiative we take is guided by compassion, integrity, collaboration, and a commitment to creating lasting value.",
+  "exploreMission": "Explore Our Mission",
+  "togetherTitle": "Together, We Can",
+  "togetherDescription": "Empower people. Strengthen communities. Create lasting change.",
+  "items": {
+    "empower": {
+      "title": "Empower Communities",
+      "description": "We work to empower individuals and communities by creating opportunities, providing support, and encouraging meaningful participation."
+    },
+    "impact": {
+      "title": "Create Lasting Impact",
+      "description": "Our goal is to build sustainable initiatives that create positive change today while making a difference for future generations."
+    },
+    "inspire": {
+      "title": "Inspire Positive Change",
+      "description": "We inspire people to take meaningful action, support one another, and become part of something bigger than themselves."
+    }
+  }
+}

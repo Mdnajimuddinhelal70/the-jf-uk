@@ -1,0 +1,36 @@
+{
+  "badge": "Current Campaigns",
+  "title": "Together, We Can Make a",
+  "titleHighlight": "Difference",
+  "description": "Explore our ongoing campaigns and discover meaningful ways to support people, communities, and causes that need your help.",
+  "viewAllCampaigns": "View All Campaigns",
+  "daysLeft": "{days} days left",
+  "goal": "Goal: {amount}",
+  "supporters": "{count} supporters",
+  "supportThisCampaign": "Support This Campaign",
+  "exploreAllCampaigns": "Explore All Campaigns",
+
+  "campaigns": {
+    "education": {
+      "title": "Help Provide Education for Every Child",
+      "description": "Support children with educational resources, learning materials, and opportunities to build a brighter future.",
+      "category": "Education",
+      "location": "Bangladesh",
+      "imageAlt": "Children receiving educational support"
+    },
+    "water": {
+      "title": "Clean Water for Rural Communities",
+      "description": "Help us bring safe and clean drinking water to communities that need reliable access to essential resources.",
+      "category": "Community",
+      "location": "Rural Bangladesh",
+      "imageAlt": "Clean water support for rural communities"
+    },
+    "food": {
+      "title": "Food Support for Families in Need",
+      "description": "Join our campaign to provide essential food supplies and support to families facing difficult circumstances.",
+      "category": "Food Support",
+      "location": "Dhaka",
+      "imageAlt": "Food support for families in need"
+    }
+  }
+}

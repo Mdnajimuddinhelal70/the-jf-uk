@@ -1,0 +1,35 @@
+{
+  "badge": "Featured Projects",
+  "title": "Projects Creating",
+  "titleHighlight": "Real Impact",
+  "description": "Discover some of the projects and initiatives through which we work to create meaningful and lasting change in communities.",
+  "viewAllProjects": "View All Projects",
+  "viewProject": "View Project",
+  "exploreAllProjects": "Explore All Projects",
+  "projects": {
+    "1": {
+      "title": "Community Learning Center",
+      "category": "Education",
+      "status": "Completed",
+      "location": "Sunamganj, Bangladesh",
+      "year": "2025",
+      "description": "A community-focused learning center created to provide children with a safe and supportive environment for education."
+    },
+    "2": {
+      "title": "Clean Water Initiative",
+      "category": "Community",
+      "status": "Ongoing",
+      "location": "Sylhet, Bangladesh",
+      "year": "2026",
+      "description": "An initiative focused on improving access to safe drinking water and creating healthier communities."
+    },
+    "3": {
+      "title": "Community Food Support",
+      "category": "Humanitarian",
+      "status": "Completed",
+      "location": "Dhaka, Bangladesh",
+      "year": "2025",
+      "description": "A community support project providing essential food packages to families experiencing difficult circumstances."
+    }
+  }
+}

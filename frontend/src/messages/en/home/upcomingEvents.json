@@ -1,0 +1,33 @@
+{
+  "badge": "Upcoming Events",
+  "title": "Be There.",
+  "titleHighlight": "Be Part of the Change.",
+  "description": "Join our upcoming events, meet like-minded people, and become part of initiatives that create meaningful change.",
+  "viewAllEvents": "View All Events",
+  "upcomingEvent": "Upcoming Event",
+  "viewEvent": "View Event",
+  "exploreAllEvents": "Explore All Events",
+  "events": {
+    "1": {
+      "category": "Community",
+      "title": "Community Awareness Program",
+      "description": "Join us for a community gathering focused on awareness, collaboration, and creating positive local change.",
+      "location": "Sunamganj, Bangladesh",
+      "time": "10:00 AM – 1:00 PM"
+    },
+    "2": {
+      "category": "Education",
+      "title": "Education Support Workshop",
+      "description": "An interactive workshop designed to connect educators, volunteers, and community members around education.",
+      "location": "Sylhet, Bangladesh",
+      "time": "3:00 PM – 5:00 PM"
+    },
+    "3": {
+      "category": "Volunteer",
+      "title": "Volunteer Community Meetup",
+      "description": "Meet our volunteers, learn about upcoming initiatives, and discover how you can contribute to our mission.",
+      "location": "Dhaka, Bangladesh",
+      "time": "11:00 AM – 2:00 PM"
+    }
+  }
+}

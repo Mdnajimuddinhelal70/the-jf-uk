@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowRight, Heart, Users } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -24,8 +24,12 @@ const images = [
 
 export default function Hero() {
   const t = useTranslations("Home.Hero");
+  const locale = useLocale();
 
   const infiniteImages = [...images, ...images];
+
+  const donateHref = `/${locale}/donate`;
+  const projectsHref = `/${locale}/projects`;
 
   return (
     <section className="relative overflow-hidden bg-[#f7faf8]">
@@ -52,7 +56,7 @@ export default function Hero() {
 
             {/* Heading */}
             <h1 className="text-4xl font-bold leading-[1.08] tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl">
-              {t("badge")}{" "}
+              {t("title")}{" "}
               <span className="text-emerald-600">{t("titleHighlight")}</span>
             </h1>
 
@@ -64,7 +68,7 @@ export default function Hero() {
             {/* Buttons */}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               {/* Donate */}
-              <Link href="/donate">
+              <Link href={donateHref}>
                 <Button size="lg" className="h-12 rounded-full px-7">
                   <Heart className="mr-2 size-4 fill-current" />
                   {t("donate")}
@@ -72,7 +76,7 @@ export default function Hero() {
               </Link>
 
               {/* Explore */}
-              <Link href="/projects">
+              <Link href={projectsHref}>
                 <Button
                   size="lg"
                   variant="outline"
@@ -107,9 +111,7 @@ export default function Hero() {
                   {t("livesSupported")}
                 </p>
 
-                <p className="text-sm text-slate-500">
-                  {t("impactDescription")}
-                </p>
+                <p className="text-sm text-slate-500">{t("difference")}</p>
               </div>
             </div>
           </div>
@@ -134,7 +136,7 @@ export default function Hero() {
                 {/* Floating Card */}
                 <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/30 bg-white/90 p-5 shadow-xl backdrop-blur-md sm:bottom-7 sm:left-7 sm:right-auto sm:w-[280px]">
                   <p className="text-sm font-medium text-slate-500">
-                    {t("impact")}
+                    {t("ourImpact")}
                   </p>
 
                   <p className="mt-1 text-3xl font-bold text-emerald-700">
@@ -142,7 +144,7 @@ export default function Hero() {
                   </p>
 
                   <p className="mt-1 text-sm text-slate-600">
-                    {t("impactDescription")}
+                    {t("programDescription")}
                   </p>
                 </div>
               </div>

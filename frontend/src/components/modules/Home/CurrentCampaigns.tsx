@@ -1,19 +1,16 @@
 import { ArrowRight, CalendarDays, Heart, MapPin, Users } from "lucide-react";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
 import Link from "next/link";
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import Image from "next/image";
 
 const campaigns = [
   {
     id: 1,
-    title: "Help Provide Education for Every Child",
-    description:
-      "Support children with educational resources, learning materials, and opportunities to build a brighter future.",
-    category: "Education",
-    location: "Bangladesh",
+    key: "education",
     raised: 7200,
     goal: 10000,
     supporters: 124,
@@ -23,11 +20,7 @@ const campaigns = [
   },
   {
     id: 2,
-    title: "Clean Water for Rural Communities",
-    description:
-      "Help us bring safe and clean drinking water to communities that need reliable access to essential resources.",
-    category: "Community",
-    location: "Rural Bangladesh",
+    key: "water",
     raised: 5400,
     goal: 8000,
     supporters: 89,
@@ -37,11 +30,7 @@ const campaigns = [
   },
   {
     id: 3,
-    title: "Food Support for Families in Need",
-    description:
-      "Join our campaign to provide essential food supplies and support to families facing difficult circumstances.",
-    category: "Food Support",
-    location: "Dhaka",
+    key: "food",
     raised: 8600,
     goal: 12000,
     supporters: 167,
@@ -49,7 +38,7 @@ const campaigns = [
     image:
       "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80",
   },
-];
+] as const;
 
 const formatAmount = (amount: number) => {
   return new Intl.NumberFormat("en-US", {
@@ -60,6 +49,8 @@ const formatAmount = (amount: number) => {
 };
 
 export default function CurrentCampaigns() {
+  const t = useTranslations("Home.CurrentCampaigns");
+
   return (
     <section className="relative overflow-hidden bg-background py-20 sm:py-24 lg:py-28">
       {/* Background decoration */}
@@ -75,25 +66,25 @@ export default function CurrentCampaigns() {
               variant="outline"
               className="mb-4 rounded-full border-primary/20 bg-primary/5 px-4 py-1.5 text-primary"
             >
-              Current Campaigns
+              {t("badge")}
             </Badge>
 
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-              Together, We Can Make a{" "}
-              <span className="text-primary">Difference</span>
+              {t("title")}{" "}
+              <span className="text-primary">{t("titleHighlight")}</span>
             </h2>
 
             <p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg">
-              Explore our ongoing campaigns and discover meaningful ways to
-              support people, communities, and causes that need your help.
+              {t("description")}
             </p>
           </div>
 
           <Link
             href="/campaigns"
-            className="inline-flex w-fit items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+            className="group inline-flex w-fit items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
           >
-            View All Campaigns
+            {t("viewAllCampaigns")}
+
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
@@ -115,7 +106,7 @@ export default function CurrentCampaigns() {
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
                     src={campaign.image}
-                    alt={campaign.title}
+                    alt={t(`campaigns.${campaign.key}.imageAlt`)}
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     width={500}
                     height={300}
@@ -126,13 +117,16 @@ export default function CurrentCampaigns() {
 
                   {/* Category */}
                   <Badge className="absolute left-4 top-4 border-0 bg-background/90 text-foreground backdrop-blur-sm hover:bg-background">
-                    {campaign.category}
+                    {t(`campaigns.${campaign.key}.category`)}
                   </Badge>
 
                   {/* Days left */}
                   <div className="absolute bottom-4 left-4 flex items-center gap-2 text-sm font-medium text-white">
                     <CalendarDays className="h-4 w-4" />
-                    {campaign.daysLeft} days left
+
+                    {t("daysLeft", {
+                      days: campaign.daysLeft,
+                    })}
                   </div>
                 </div>
 
@@ -140,17 +134,18 @@ export default function CurrentCampaigns() {
                   {/* Location */}
                   <div className="mb-3 flex items-center gap-1.5 text-xs text-muted-foreground">
                     <MapPin className="h-3.5 w-3.5" />
-                    {campaign.location}
+
+                    {t(`campaigns.${campaign.key}.location`)}
                   </div>
 
                   {/* Title */}
                   <h3 className="line-clamp-2 text-xl font-semibold tracking-tight transition-colors group-hover:text-primary">
-                    {campaign.title}
+                    {t(`campaigns.${campaign.key}.title`)}
                   </h3>
 
                   {/* Description */}
                   <p className="mt-3 line-clamp-3 text-sm leading-6 text-muted-foreground">
-                    {campaign.description}
+                    {t(`campaigns.${campaign.key}.description`)}
                   </p>
 
                   {/* Progress */}
@@ -166,11 +161,18 @@ export default function CurrentCampaigns() {
                     <Progress value={progress} className="h-2" />
 
                     <div className="mt-2 flex items-center justify-between text-xs text-muted-foreground">
-                      <span>Goal: {formatAmount(campaign.goal)}</span>
+                      <span>
+                        {t("goal", {
+                          amount: formatAmount(campaign.goal),
+                        })}
+                      </span>
 
                       <span className="flex items-center gap-1">
                         <Users className="h-3.5 w-3.5" />
-                        {campaign.supporters} supporters
+
+                        {t("supporters", {
+                          count: campaign.supporters,
+                        })}
                       </span>
                     </div>
                   </div>
@@ -181,7 +183,8 @@ export default function CurrentCampaigns() {
                     className="mt-6 inline-flex h-10 w-full items-center justify-center gap-2 rounded-full bg-primary px-5 text-sm font-medium text-primary-foreground shadow-xs transition-all hover:bg-primary/90"
                   >
                     <Heart className="h-4 w-4" />
-                    Support This Campaign
+
+                    {t("supportThisCampaign")}
                   </Link>
                 </CardContent>
               </Card>
@@ -195,7 +198,8 @@ export default function CurrentCampaigns() {
             href="/campaigns"
             className="inline-flex items-center gap-2 rounded-full border px-6 py-2.5 text-sm font-medium transition-colors hover:bg-muted"
           >
-            Explore All Campaigns
+            {t("exploreAllCampaigns")}
+
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
