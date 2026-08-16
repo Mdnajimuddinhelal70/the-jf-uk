@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowUpRight, Heart, Menu } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -23,65 +24,206 @@ import {
 
 import { Button } from "@/components/ui/button";
 
+/* =========================================================
+   TYPES
+========================================================= */
+
+type Locale = "en" | "bn";
+
+interface LanguageSwitcherProps {
+  locale: Locale;
+  switchLocale: (newLocale: Locale) => string;
+}
+
+/* =========================================================
+   WORK ITEMS
+========================================================= */
+
 const workItems = [
   {
-    title: "Our Projects",
-    description: "Discover the projects and initiatives we are working on.",
+    key: "projects",
     href: "/projects",
   },
   {
-    title: "Campaigns",
-    description: "Support our current campaigns and humanitarian work.",
+    key: "campaigns",
     href: "/campaigns",
   },
   {
-    title: "Events",
-    description: "Explore our upcoming and past events.",
+    key: "events",
     href: "/events",
   },
 ];
 
+/* =========================================================
+   NAV ITEMS
+========================================================= */
+
 const navItems = [
   {
-    title: "Home",
+    key: "home",
     href: "/",
   },
   {
-    title: "About Us",
+    key: "about",
     href: "/about",
   },
   {
-    title: "News",
+    key: "news",
     href: "/news",
   },
   {
-    title: "Contact",
+    key: "contact",
     href: "/contact",
   },
 ];
 
+/* =========================================================
+   LANGUAGE SWITCHER
+   IMPORTANT:
+   This component is declared OUTSIDE Navbar.
+========================================================= */
+
+function LanguageSwitcher({ locale, switchLocale }: LanguageSwitcherProps) {
+  return (
+    <div className="flex items-center gap-1 rounded-full border bg-muted/50 p-1">
+      {/* BANGLA */}
+
+      <Link
+        href={switchLocale("bn")}
+        className={`rounded-full px-3 py-1.5 text-xs font-semibold transition-colors ${
+          locale === "bn"
+            ? "bg-primary text-primary-foreground shadow-sm"
+            : "text-muted-foreground hover:text-foreground"
+        }`}
+      >
+        বাংলা
+      </Link>
+
+      {/* ENGLISH */}
+
+      <Link
+        href={switchLocale("en")}
+        className={`rounded-full px-3 py-1.5 text-xs font-semibold transition-colors ${
+          locale === "en"
+            ? "bg-primary text-primary-foreground shadow-sm"
+            : "text-muted-foreground hover:text-foreground"
+        }`}
+      >
+        EN
+      </Link>
+    </div>
+  );
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
 export default function Navbar() {
   const pathname = usePathname();
+  const t = useTranslations("Navbar");
 
-  const isActive = (href: string) => {
-    if (href === "/") {
-      return pathname === "/";
+  /* =======================================================
+     CURRENT LOCALE
+  ======================================================= */
+
+  const segments = pathname.split("/").filter(Boolean);
+
+  const locale: Locale = segments[0] === "bn" ? "bn" : "en";
+
+  /* =======================================================
+     CREATE LOCALIZED URL
+     
+     Examples:
+     /en        -> /en
+     /bn        -> /bn
+     /en/about  -> /en/about
+     /bn/news   -> /bn/news
+  ======================================================= */
+
+  const getLocalizedHref = (href: string) => {
+    return `/${locale}${href === "/" ? "" : href}`;
+  };
+
+  /* =======================================================
+     SWITCH LANGUAGE
+
+     Examples:
+     /en/about -> /bn/about
+     /bn/about -> /en/about
+     /en       -> /bn
+     /bn       -> /en
+  ======================================================= */
+
+  const switchLocale = (newLocale: Locale) => {
+    const currentSegments = pathname.split("/").filter(Boolean);
+
+    /* -----------------------------------------------
+       If URL already contains a locale
+    ------------------------------------------------ */
+
+    if (currentSegments[0] === "en" || currentSegments[0] === "bn") {
+      currentSegments[0] = newLocale;
+
+      return `/${currentSegments.join("/")}`;
     }
 
-    return pathname.startsWith(href);
+    /* -----------------------------------------------
+       Fallback for non-localized routes
+    ------------------------------------------------ */
+
+    return `/${newLocale}${pathname === "/" ? "" : pathname}`;
   };
+
+  /* =======================================================
+     ACTIVE NAVIGATION
+  ======================================================= */
+
+  const isActive = (href: string) => {
+    const localizedHref = getLocalizedHref(href);
+
+    /* Home */
+
+    if (href === "/") {
+      return pathname === localizedHref;
+    }
+
+    /* Other pages */
+
+    return (
+      pathname === localizedHref || pathname.startsWith(`${localizedHref}/`)
+    );
+  };
+
+  /* =======================================================
+     OUR WORK ACTIVE STATE
+  ======================================================= */
+
+  const isWorkActive = workItems.some((item) => isActive(item.href));
+
+  /* =======================================================
+     RENDER
+  ======================================================= */
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container mx-auto flex h-20 items-center justify-between px-4 lg:px-8">
-        {/* ================= LOGO ================= */}
-        <Link href="/" className="group flex items-center gap-3">
+        {/* =================================================
+            LOGO
+        ================================================= */}
+
+        <Link
+          href={getLocalizedHref("/")}
+          className="group flex items-center gap-3"
+        >
           {/* Logo Icon */}
+
           <div className="flex size-11 items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform duration-300 group-hover:scale-105">
             <Heart className="size-5 fill-current" />
           </div>
 
           {/* Logo Text */}
+
           <div className="hidden leading-none sm:block">
             <div className="text-lg font-bold tracking-tight">The Jannath</div>
 
@@ -91,26 +233,35 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* ================= DESKTOP NAV ================= */}
+        {/* =================================================
+            DESKTOP NAVIGATION
+        ================================================= */}
+
         <NavigationMenu className="hidden lg:flex">
           <NavigationMenuList>
-            {/* Normal Navigation Items */}
+            {/* =================================================
+                NORMAL NAVIGATION
+            ================================================= */}
+
             {navItems.map((item) => (
               <NavigationMenuItem key={item.href}>
                 <NavigationMenuLink
-                  href={item.href}
+                  href={getLocalizedHref(item.href)}
                   className={`group inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground ${
                     isActive(item.href)
                       ? "text-primary"
                       : "text-muted-foreground"
                   }`}
                 >
-                  {item.title}
+                  {t(item.key)}
                 </NavigationMenuLink>
               </NavigationMenuItem>
             ))}
 
-            {/* ================= OUR WORK ================= */}
+            {/* =================================================
+                OUR WORK
+            ================================================= */}
+
             <NavigationMenuItem>
               <NavigationMenuTrigger
                 className={
@@ -119,7 +270,7 @@ export default function Navbar() {
                     : "text-muted-foreground"
                 }
               >
-                Our Work
+                {t("ourWork")}
               </NavigationMenuTrigger>
 
               <NavigationMenuContent>
@@ -127,20 +278,22 @@ export default function Navbar() {
                   {workItems.map((item) => (
                     <li key={item.href}>
                       <Link
-                        href={item.href}
-                        className="group block select-none rounded-md p-3 outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                        href={getLocalizedHref(item.href)}
+                        className={`group block select-none rounded-md p-3 outline-none transition-colors hover:bg-accent hover:text-accent-foreground ${
+                          isActive(item.href) ? "bg-accent/50" : ""
+                        }`}
                       >
                         <div className="flex items-center justify-between">
-                          <div className="text-sm font-semibold">
-                            {item.title}
+                          <div
+                            className={`text-sm font-semibold ${
+                              isActive(item.href) ? "text-primary" : ""
+                            }`}
+                          >
+                            {t(item.key)}
                           </div>
 
                           <ArrowUpRight className="size-4 opacity-0 transition-opacity group-hover:opacity-100" />
                         </div>
-
-                        <p className="mt-2 text-sm leading-snug text-muted-foreground">
-                          {item.description}
-                        </p>
                       </Link>
                     </li>
                   ))}
@@ -150,9 +303,18 @@ export default function Navbar() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        {/* ================= DESKTOP DONATE ================= */}
-        <div className="hidden lg:flex">
-          <Link href="/donate">
+        {/* =================================================
+            DESKTOP RIGHT SIDE
+        ================================================= */}
+
+        <div className="hidden items-center gap-3 lg:flex">
+          {/* LANGUAGE */}
+
+          <LanguageSwitcher locale={locale} switchLocale={switchLocale} />
+
+          {/* DONATE */}
+
+          <Link href={getLocalizedHref("/donate")}>
             <Button className="rounded-full px-6 shadow-sm">
               <Heart className="mr-2 size-4 fill-current" />
               Donate Now
@@ -160,13 +322,16 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* ================= MOBILE MENU ================= */}
+        {/* =================================================
+            MOBILE MENU
+        ================================================= */}
+
         <div className="lg:hidden">
           <Sheet>
-            {/* IMPORTANT:
-                SheetTrigger itself renders a button.
-                asChild prevents nested <button>.
-            */}
+            {/* =================================================
+                MOBILE MENU BUTTON
+            ================================================= */}
+
             <SheetTrigger
               className="inline-flex size-10 items-center justify-center rounded-md transition-colors hover:bg-accent hover:text-accent-foreground lg:hidden"
               aria-label="Open navigation menu"
@@ -174,17 +339,25 @@ export default function Navbar() {
               <Menu className="size-6" />
             </SheetTrigger>
 
-            {/* ================= MOBILE SHEET ================= */}
+            {/* =================================================
+                MOBILE SHEET
+            ================================================= */}
+
             <SheetContent side="right" className="w-[85%] sm:max-w-sm">
-              {/* Mobile Header */}
+              {/* =================================================
+                  MOBILE HEADER
+              ================================================= */}
+
               <SheetHeader className="border-b pb-5">
                 <SheetTitle className="flex items-center gap-3 text-left">
                   {/* Logo Icon */}
+
                   <div className="flex size-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
                     <Heart className="size-5 fill-current" />
                   </div>
 
                   {/* Logo Text */}
+
                   <div>
                     <div className="text-base font-bold">The Jannath</div>
 
@@ -195,52 +368,75 @@ export default function Navbar() {
                 </SheetTitle>
               </SheetHeader>
 
-              {/* ================= MOBILE NAVIGATION ================= */}
+              {/* =================================================
+                  MOBILE NAVIGATION
+              ================================================= */}
+
               <div className="mt-6 flex flex-col gap-2">
-                {/* Main Navigation */}
+                {/* =================================================
+                    LANGUAGE SWITCHER
+                ================================================= */}
+
+                <div className="mb-3 flex justify-start px-2">
+                  <LanguageSwitcher
+                    locale={locale}
+                    switchLocale={switchLocale}
+                  />
+                </div>
+
+                {/* =================================================
+                    MAIN NAVIGATION
+                ================================================= */}
+
                 {navItems.map((item) => (
                   <Link
                     key={item.href}
-                    href={item.href}
+                    href={getLocalizedHref(item.href)}
                     className={`rounded-lg px-4 py-3 text-sm font-medium transition-colors ${
                       isActive(item.href)
                         ? "bg-primary/10 text-primary"
                         : "text-muted-foreground hover:bg-accent hover:text-foreground"
                     }`}
                   >
-                    {item.title}
+                    {t(item.key)}
                   </Link>
                 ))}
 
-                {/* ================= MOBILE OUR WORK ================= */}
+                {/* =================================================
+                    MOBILE OUR WORK
+                ================================================= */}
+
                 <div className="mt-2">
                   <div className="px-4 py-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                    Our Work
+                    {t("ourWork")}
                   </div>
 
                   <div className="ml-2 border-l pl-2">
                     {workItems.map((item) => (
                       <Link
                         key={item.href}
-                        href={item.href}
+                        href={getLocalizedHref(item.href)}
                         className={`block rounded-lg px-4 py-3 text-sm transition-colors ${
                           isActive(item.href)
                             ? "font-medium text-primary"
                             : "text-muted-foreground hover:bg-accent hover:text-foreground"
                         }`}
                       >
-                        {item.title}
+                        {t(item.key)}
                       </Link>
                     ))}
                   </div>
                 </div>
 
-                {/* ================= MOBILE DONATE ================= */}
+                {/* =================================================
+                    MOBILE DONATE
+                ================================================= */}
+
                 <div className="mt-6 border-t pt-6">
-                  <Link href="/donate" className="block">
+                  <Link href={getLocalizedHref("/donate")} className="block">
                     <Button size="lg" className="w-full rounded-full">
                       <Heart className="mr-2 size-4 fill-current" />
-                      Donate Now
+                      {t("donate")}
                     </Button>
                   </Link>
                 </div>

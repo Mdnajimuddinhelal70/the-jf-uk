@@ -1,0 +1,61 @@
+{
+  "Navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "ourWork": "Our Work",
+    "campaigns": "Campaigns",
+    "events": "Events",
+    "projects": "Projects",
+    "news": "News",
+    "contact": "Contact",
+    "donate": "Donate"
+  },
+
+  "Home": {
+    "Hero": {
+      "badge": "Compassion • Action • Change",
+      "title": "Together We Can",
+      "titleHighlight": "Build a Better Future",
+      "description": "The Jannath Foundation UK is dedicated to supporting communities, empowering lives, and creating meaningful change through compassion, generosity, and action.",
+      "donate": "Donate Now",
+      "explore": "Explore Our Work",
+      "livesSupported": "10,000+ Lives Supported",
+      "impactDescription": "Together, we can make a difference.",
+      "impact": "Our Impact",
+      "programDescription": "Lives supported through our programs.",
+      "imageAlt1": "Support activities for children in the community",
+      "imageAlt2": "Foundation activities supporting the community",
+      "imageAlt3": "Humanitarian and community support activities"
+    },
+
+    "AboutFoundation": {
+      "badge": "About the Foundation",
+      "title": "Building a Better Future,",
+      "titleHighlight": "Together",
+      "description": "We are committed to creating positive change through meaningful initiatives, community support, and opportunities that empower people to build a brighter future.",
+      "impactTitle": "Making an Impact",
+      "impactDescription": "Together we can create opportunities and make a meaningful difference.",
+      "commitment": "Committed to our values",
+      "whoWeAre": "Who We Are",
+      "heading": "We believe every small effort can create a big difference.",
+      "paragraphOne": "Our foundation works to support people, communities, and initiatives that have the potential to create meaningful positive change. We focus on building trust, creating opportunities, and bringing people together around a common purpose.",
+      "paragraphTwo": "Through collaboration and responsible action, we aim to create an environment where everyone has the opportunity to grow, contribute, and build a better future.",
+      "learnMore": "Learn More",
+
+      "highlights": {
+        "mission": {
+          "title": "Our Mission",
+          "description": "To create meaningful opportunities and support initiatives that bring positive and lasting change to communities."
+        },
+        "community": {
+          "title": "Our Community",
+          "description": "We believe real impact begins when people come together with a shared purpose, compassion, and commitment."
+        },
+        "values": {
+          "title": "Our Values",
+          "description": "Integrity, compassion, transparency, and responsibility guide everything we do for the people we serve."
+        }
+      }
+    }
+  }
+}

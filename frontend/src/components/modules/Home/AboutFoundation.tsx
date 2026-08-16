@@ -1,63 +1,62 @@
 import { ArrowUpRight, Heart, ShieldCheck, Target, Users } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
-const foundationHighlights = [
-  {
-    icon: Target,
-    title: "Our Mission",
-    description:
-      "To create meaningful opportunities and support initiatives that bring positive and lasting change to communities.",
-  },
-  {
-    icon: Users,
-    title: "Our Community",
-    description:
-      "We believe real impact begins when people come together with a shared purpose, compassion, and commitment.",
-  },
-  {
-    icon: Heart,
-    title: "Our Values",
-    description:
-      "Integrity, compassion, transparency, and responsibility guide everything we do for the people we serve.",
-  },
-];
-
 export default function AboutFoundation() {
+  const t = useTranslations("Home.AboutFoundation");
+
+  const foundationHighlights = [
+    {
+      icon: Target,
+      title: t("highlights.mission.title"),
+      description: t("highlights.mission.description"),
+    },
+    {
+      icon: Users,
+      title: t("highlights.community.title"),
+      description: t("highlights.community.description"),
+    },
+    {
+      icon: Heart,
+      title: t("highlights.values.title"),
+      description: t("highlights.values.description"),
+    },
+  ];
+
   return (
     <section className="relative overflow-hidden bg-background py-20 sm:py-24 lg:py-28">
       {/* Background decoration */}
       <div className="pointer-events-none absolute left-0 top-20 -z-10 h-72 w-72 rounded-full bg-primary/5 blur-3xl" />
+
       <div className="pointer-events-none absolute bottom-0 right-0 -z-10 h-72 w-72 rounded-full bg-primary/5 blur-3xl" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section heading */}
+        {/* ================= SECTION HEADING ================= */}
         <div className="mx-auto mb-14 max-w-3xl text-center">
           <Badge
             variant="outline"
             className="mb-4 rounded-full px-4 py-1.5 text-sm"
           >
-            About the Foundation
+            {t("badge")}
           </Badge>
 
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-            Building a Better Future,{" "}
-            <span className="text-primary">Together</span>
+            {t("title")}{" "}
+            <span className="text-primary">{t("titleHighlight")}</span>
           </h2>
 
           <p className="mt-5 text-base leading-7 text-muted-foreground sm:text-lg">
-            We are committed to creating positive change through meaningful
-            initiatives, community support, and opportunities that empower
-            people to build a brighter future.
+            {t("description")}
           </p>
         </div>
 
-        {/* Main content */}
+        {/* ================= MAIN CONTENT ================= */}
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Left - Visual */}
+          {/* ================= LEFT - VISUAL ================= */}
           <div className="relative">
             <div className="relative overflow-hidden rounded-3xl border bg-muted/30 p-3 shadow-sm">
               <div className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 via-background to-primary/5">
@@ -66,17 +65,16 @@ export default function AboutFoundation() {
                     <Heart className="h-10 w-10 text-primary" />
                   </div>
 
-                  <p className="text-xl font-semibold">Making an Impact</p>
+                  <p className="text-xl font-semibold">{t("impactTitle")}</p>
 
                   <p className="mx-auto mt-2 max-w-xs text-sm text-muted-foreground">
-                    Together we can create opportunities and make a meaningful
-                    difference.
+                    {t("impactDescription")}
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Floating card */}
+            {/* ================= FLOATING CARD ================= */}
             <Card className="absolute -bottom-6 -right-3 w-[210px] shadow-xl sm:-right-6">
               <CardContent className="p-5">
                 <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
@@ -86,45 +84,41 @@ export default function AboutFoundation() {
                 <p className="text-2xl font-bold">100%</p>
 
                 <p className="text-sm text-muted-foreground">
-                  Committed to our values
+                  {t("commitment")}
                 </p>
               </CardContent>
             </Card>
           </div>
 
-          {/* Right - Content */}
+          {/* ================= RIGHT - CONTENT ================= */}
           <div>
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-              Who We Are
+              {t("whoWeAre")}
             </p>
 
             <h3 className="text-2xl font-bold tracking-tight sm:text-3xl">
-              We believe every small effort can create a big difference.
+              {t("heading")}
             </h3>
 
             <p className="mt-5 leading-7 text-muted-foreground">
-              Our foundation works to support people, communities, and
-              initiatives that have the potential to create meaningful positive
-              change. We focus on building trust, creating opportunities, and
-              bringing people together around a common purpose.
+              {t("paragraphOne")}
             </p>
 
             <p className="mt-4 leading-7 text-muted-foreground">
-              Through collaboration and responsible action, we aim to create an
-              environment where everyone has the opportunity to grow,
-              contribute, and build a better future.
+              {t("paragraphTwo")}
             </p>
 
             <Button className="mt-7 rounded-full">
-              <Link href="/about">
-                Learn More
+              <Link href="/about" className="flex items-center">
+                {t("learnMore")}
+
                 <ArrowUpRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
           </div>
         </div>
 
-        {/* Highlights */}
+        {/* ================= HIGHLIGHTS ================= */}
         <div className="mt-20 grid gap-5 md:grid-cols-3">
           {foundationHighlights.map((item) => {
             const Icon = item.icon;

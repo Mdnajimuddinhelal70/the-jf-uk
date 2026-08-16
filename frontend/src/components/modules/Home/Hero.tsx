@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight, Heart, Users } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -9,19 +10,21 @@ import { Button } from "@/components/ui/button";
 const images = [
   {
     src: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80",
-    alt: "The Jannath Foundation helping communities",
+    altKey: "imageAlt1",
   },
   {
     src: "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=1200&q=80",
-    alt: "Community support",
+    altKey: "imageAlt2",
   },
   {
     src: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80",
-    alt: "Humanitarian work",
+    altKey: "imageAlt3",
   },
 ];
 
 export default function Hero() {
+  const t = useTranslations("Home.Hero");
+
   const infiniteImages = [...images, ...images];
 
   return (
@@ -43,21 +46,19 @@ export default function Hero() {
               <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-600" />
 
               <span className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-700 sm:text-sm">
-                Compassion • Action • Change
+                {t("badge")}
               </span>
             </div>
 
             {/* Heading */}
             <h1 className="text-4xl font-bold leading-[1.08] tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl">
-              Together We Can{" "}
-              <span className="text-emerald-600">Build a Better Future</span>
+              {t("badge")}{" "}
+              <span className="text-emerald-600">{t("titleHighlight")}</span>
             </h1>
 
             {/* Description */}
             <p className="mt-6 max-w-xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
-              The Jannath Foundation UK is dedicated to supporting communities,
-              empowering lives, and creating meaningful change through
-              compassion, generosity, and action.
+              {t("description")}
             </p>
 
             {/* Buttons */}
@@ -66,7 +67,7 @@ export default function Hero() {
               <Link href="/donate">
                 <Button size="lg" className="h-12 rounded-full px-7">
                   <Heart className="mr-2 size-4 fill-current" />
-                  Donate Now
+                  {t("donate")}
                 </Button>
               </Link>
 
@@ -77,7 +78,7 @@ export default function Hero() {
                   variant="outline"
                   className="h-12 rounded-full px-7"
                 >
-                  Explore Our Work
+                  {t("explore")}
                   <ArrowRight className="ml-2 size-4" />
                 </Button>
               </Link>
@@ -103,11 +104,11 @@ export default function Hero() {
               {/* Impact Text */}
               <div>
                 <p className="text-sm font-bold text-slate-900">
-                  10,000+ Lives Supported
+                  {t("livesSupported")}
                 </p>
 
                 <p className="text-sm text-slate-500">
-                  Together, we can make a difference.
+                  {t("impactDescription")}
                 </p>
               </div>
             </div>
@@ -120,7 +121,7 @@ export default function Hero() {
               <div className="relative h-[400px] overflow-hidden rounded-[1.5rem] sm:h-[500px] lg:h-[560px]">
                 <Image
                   src={images[2].src}
-                  alt={images[2].alt}
+                  alt={t(images[2].altKey)}
                   fill
                   priority
                   className="object-cover"
@@ -133,7 +134,7 @@ export default function Hero() {
                 {/* Floating Card */}
                 <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/30 bg-white/90 p-5 shadow-xl backdrop-blur-md sm:bottom-7 sm:left-7 sm:right-auto sm:w-[280px]">
                   <p className="text-sm font-medium text-slate-500">
-                    Our Impact
+                    {t("impact")}
                   </p>
 
                   <p className="mt-1 text-3xl font-bold text-emerald-700">
@@ -141,7 +142,7 @@ export default function Hero() {
                   </p>
 
                   <p className="mt-1 text-sm text-slate-600">
-                    Lives supported through our programs.
+                    {t("impactDescription")}
                   </p>
                 </div>
               </div>
@@ -172,7 +173,7 @@ export default function Hero() {
             >
               <Image
                 src={image.src}
-                alt={image.alt}
+                alt={t(image.altKey)}
                 fill
                 sizes="160px"
                 className="object-cover transition-transform duration-500 hover:scale-110"
