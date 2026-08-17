@@ -1,9 +1,10 @@
+import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Heart, HeartHandshake, UsersRound } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
-import { Card, CardContent } from "@/components/ui/card";
-
 export default function ActionCTA() {
+  const t = useTranslations("Home.ActionCTA");
   return (
     <section className="relative overflow-hidden bg-background py-20 sm:py-24 lg:py-28">
       {/* Background decoration */}
@@ -25,16 +26,15 @@ export default function ActionCTA() {
               </div>
 
               <p className="mt-5 text-sm font-semibold uppercase tracking-[0.2em] text-primary-foreground/70">
-                Make a Difference
+                {t("badge")}
               </p>
 
               <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-                Your Support Can Create Real Change
+                {t("title")}
               </h2>
 
               <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-primary-foreground/80 sm:text-lg">
-                Whether you give your time, skills, or resources, your support
-                can help us reach more people and build stronger communities.
+                {t("description")}
               </p>
             </div>
 
@@ -48,19 +48,18 @@ export default function ActionCTA() {
                   </div>
 
                   <h3 className="mt-5 text-xl font-semibold">
-                    Become a Volunteer
+                    {t("volunteer.title")}
                   </h3>
 
                   <p className="mt-3 text-sm leading-6 text-primary-foreground/70">
-                    Share your time, skills, and passion to help us create a
-                    meaningful impact in communities.
+                    {t("volunteer.description")}
                   </p>
 
                   <Link
                     href="/volunteer"
                     className="mt-6 inline-flex h-10 items-center justify-center gap-2 rounded-full bg-primary-foreground px-5 text-sm font-medium text-primary transition-colors hover:bg-primary-foreground/90"
                   >
-                    Join as a Volunteer
+                    {t("volunteer.button")}
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </CardContent>
@@ -74,19 +73,18 @@ export default function ActionCTA() {
                   </div>
 
                   <h3 className="mt-5 text-xl font-semibold">
-                    Support Our Mission
+                    {t("donation.title")}
                   </h3>
 
                   <p className="mt-3 text-sm leading-6 text-primary-foreground/70">
-                    Your contribution can help fund important projects and
-                    provide support to people and communities in need.
+                    {t("donation.description")}
                   </p>
 
                   <Link
                     href="/donate"
                     className="mt-6 inline-flex h-10 items-center justify-center gap-2 rounded-full bg-background px-5 text-sm font-medium text-foreground transition-colors hover:bg-background/90"
                   >
-                    Support Our Mission
+                    {t("donation.button")}
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </CardContent>

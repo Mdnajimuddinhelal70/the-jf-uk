@@ -32,6 +32,28 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const featuredProjectsMessages = (
     await import(`../messages/${locale}/home/featuredProjects.json`)
   ).default;
+  const actionCTAMessages = (
+    await import(`../messages/${locale}/home/actionCTA.json`)
+  ).default;
+  // For about page
+  const aboutBannerMessages = (
+    await import(`../messages/${locale}/about/banner.json`)
+  ).default;
+  const chairmanProfileMessages = (
+    await import(`../messages/${locale}/about/chairmanProfile.json`)
+  ).default;
+  const aboutHeroMessages = (
+    await import(`../messages/${locale}/about/aboutHero.json`)
+  ).default;
+  const whoWeAreMessages = (
+    await import(`../messages/${locale}/about/who-we-are.json`)
+  ).default;
+  const whatWeDoMessages = (
+    await import(`../messages/${locale}/about/what-we-do.json`)
+  ).default;
+  const lifetimeDonorMessages = (
+    await import(`../messages/${locale}/about/lifetime-donor.json`)
+  ).default;
   return {
     locale,
     messages: {
@@ -46,6 +68,15 @@ export default getRequestConfig(async ({ requestLocale }) => {
         CurrentCampaigns: currentCampaignsMessages,
         UpcomingEvents: upcomingEventsMessages,
         FeaturedProjects: featuredProjectsMessages,
+        ActionCTA: actionCTAMessages,
+      },
+      About: {
+        Banner: aboutBannerMessages,
+        ChairmanProfile: chairmanProfileMessages,
+        AboutHero: aboutHeroMessages,
+        WhoWeAre: whoWeAreMessages,
+        WhatWeDo: whatWeDoMessages,
+        LifetimeDonor: lifetimeDonorMessages,
       },
     },
   };

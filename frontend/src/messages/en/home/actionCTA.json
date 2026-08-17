@@ -1,0 +1,15 @@
+{
+  "badge": "Make a Difference",
+  "title": "Your Support Can Create Real Change",
+  "description": "Whether you give your time, skills, or resources, your support can help us reach more people and build stronger communities.",
+  "volunteer": {
+    "title": "Become a Volunteer",
+    "description": "Share your time, skills, and passion to help us create a meaningful impact in communities.",
+    "button": "Join as a Volunteer"
+  },
+  "donation": {
+    "title": "Support Our Mission",
+    "description": "Your contribution can help fund important projects and provide support to people and communities in need.",
+    "button": "Support Our Mission"
+  }
+}

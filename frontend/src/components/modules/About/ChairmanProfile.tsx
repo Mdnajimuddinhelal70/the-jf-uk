@@ -6,11 +6,14 @@ import {
   MapPin,
   Quote,
 } from "lucide-react";
-
-import { Badge } from "@/components/ui/badge";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
+import { Badge } from "@/components/ui/badge";
+
 export default function ChairmanProfile() {
+  const t = useTranslations("About.ChairmanProfile");
+
   return (
     <section className="relative overflow-hidden bg-background py-20 sm:py-24 lg:py-28">
       {/* Background decoration */}
@@ -26,16 +29,17 @@ export default function ChairmanProfile() {
             className="rounded-full border-primary/20 bg-primary/5 px-4 py-1.5 text-primary"
           >
             <HeartHandshake className="mr-2 h-4 w-4" />
-            Our Leadership
+
+            {t("badge")}
           </Badge>
 
           <h2 className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-            Meet Our <span className="text-primary">Chairman</span>
+            {t("title")}{" "}
+            <span className="text-primary">{t("titleHighlight")}</span>
           </h2>
 
           <p className="mt-5 text-base leading-7 text-muted-foreground sm:text-lg">
-            Guided by experience, dedication, and a vision for positive change,
-            our chairman leads the foundation with purpose and compassion.
+            {t("description")}
           </p>
         </div>
 
@@ -46,7 +50,7 @@ export default function ChairmanProfile() {
             <div className="relative min-h-[520px] overflow-hidden bg-muted sm:min-h-[620px] lg:min-h-[700px]">
               <Image
                 src="https://res.cloudinary.com/dpgjlcycl/image/upload/v1786803130/ChairmanImg_mlerq7.jpg"
-                alt="Chairman of the Foundation"
+                alt={t("imageAlt")}
                 className="absolute inset-0 h-full w-full object-cover object-top"
                 width={800}
                 height={1000}
@@ -57,11 +61,11 @@ export default function ChairmanProfile() {
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-6 sm:p-8">
                 <div className="text-white">
                   <p className="text-sm font-medium text-white/70">
-                    Chairman & Founder
+                    {t("chairman.role")}
                   </p>
 
                   <h3 className="mt-1 text-2xl font-bold sm:text-3xl">
-                    Mr. Alhaz Lacky Miah.
+                    {t("chairman.name")}
                   </h3>
                 </div>
               </div>
@@ -75,41 +79,32 @@ export default function ChairmanProfile() {
               </div>
 
               <blockquote className="mt-5 text-xl font-medium leading-8 tracking-tight sm:text-2xl">
-                “Together, we can create opportunities, empower communities, and
-                build a future where everyone has the chance to thrive.”
+                “{t("chairman.quote")}”
               </blockquote>
 
               {/* Name */}
               <div className="mt-8">
                 <p className="text-sm font-medium uppercase tracking-[0.18em] text-primary">
-                  Chairman&apos;s Profile
+                  {t("chairman.profileLabel")}
                 </p>
 
                 <h3 className="mt-2 text-3xl font-bold tracking-tight">
-                  Mr. Alhaz Lacky Miah
+                  {t("chairman.name")}
                 </h3>
 
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Chairman & Founder, Your Foundation
+                  {t("chairman.position")}
                 </p>
               </div>
 
               {/* Biography */}
               <div className="mt-7">
                 <p className="text-sm leading-7 text-muted-foreground sm:text-base">
-                  Mr. Alhaz Lacky Miah is a dedicated community leader committed
-                  to creating meaningful opportunities and supporting
-                  sustainable development. Through his leadership and
-                  experience, he has helped guide the foundation toward
-                  initiatives focused on community empowerment, education, and
-                  social development.
+                  {t("chairman.biography.paragraph1")}
                 </p>
 
                 <p className="mt-4 text-sm leading-7 text-muted-foreground sm:text-base">
-                  His leadership is built on the principles of integrity,
-                  compassion, collaboration, and service. He believes that
-                  lasting change becomes possible when people come together with
-                  a shared vision and a commitment to helping others.
+                  {t("chairman.biography.paragraph2")}
                 </p>
               </div>
 
@@ -123,11 +118,11 @@ export default function ChairmanProfile() {
 
                   <div>
                     <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                      Education
+                      {t("chairman.details.education.label")}
                     </p>
 
                     <p className="mt-1 text-sm font-semibold">
-                      Master&apos;s Degree
+                      {t("chairman.details.education.value")}
                     </p>
                   </div>
                 </div>
@@ -140,10 +135,12 @@ export default function ChairmanProfile() {
 
                   <div>
                     <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                      Experience
+                      {t("chairman.details.experience.label")}
                     </p>
 
-                    <p className="mt-1 text-sm font-semibold">15+ Years</p>
+                    <p className="mt-1 text-sm font-semibold">
+                      {t("chairman.details.experience.value")}
+                    </p>
                   </div>
                 </div>
 
@@ -155,10 +152,12 @@ export default function ChairmanProfile() {
 
                   <div>
                     <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                      Based In
+                      {t("chairman.details.location.label")}
                     </p>
 
-                    <p className="mt-1 text-sm font-semibold">Bangladesh</p>
+                    <p className="mt-1 text-sm font-semibold">
+                      {t("chairman.details.location.value")}
+                    </p>
                   </div>
                 </div>
 
@@ -170,11 +169,11 @@ export default function ChairmanProfile() {
 
                   <div>
                     <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                      Leadership
+                      {t("chairman.details.leadership.label")}
                     </p>
 
                     <p className="mt-1 text-sm font-semibold">
-                      Chairman & Founder
+                      {t("chairman.details.leadership.value")}
                     </p>
                   </div>
                 </div>
@@ -186,7 +185,8 @@ export default function ChairmanProfile() {
                   href="#chairman-message"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
                 >
-                  Read Chairman&apos;s Message
+                  {t("chairman.cta")}
+
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </div>

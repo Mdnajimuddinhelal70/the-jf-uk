@@ -1,0 +1,19 @@
+{
+  "badge": "About Our Foundation",
+  "cta": "Discover Our Story",
+  "slides": {
+    "1": {
+      "title": "Building Hope Together",
+      "description": "Working with communities to create meaningful opportunities and a better future."
+    },
+    "2": {
+      "title": "Creating Meaningful Change",
+      "description": "Turning compassion, collaboration, and action into positive impact."
+    },
+    "3": {
+      "title": "Together for a Better Future",
+      "description": "Empowering people and strengthening communities through purposeful initiatives."
+    }
+  },
+  "slideIndicator": "Go to slide {number}"
+}

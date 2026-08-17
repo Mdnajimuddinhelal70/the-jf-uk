@@ -7,6 +7,7 @@ import {
   Leaf,
   UsersRound,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 import { Badge } from "@/components/ui/badge";
@@ -14,44 +15,34 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const areas = [
   {
+    id: "education",
     icon: GraduationCap,
-    title: "Education",
-    description:
-      "Supporting access to learning, educational opportunities, and initiatives that help people build a better future.",
   },
   {
+    id: "communitySupport",
     icon: HandHeart,
-    title: "Community Support",
-    description:
-      "Working alongside communities to understand their needs and provide meaningful support where it matters most.",
   },
   {
+    id: "health",
     icon: HeartPulse,
-    title: "Health & Wellbeing",
-    description:
-      "Supporting initiatives that promote healthier lives, wellbeing, and access to essential community resources.",
   },
   {
+    id: "humanitarian",
     icon: UsersRound,
-    title: "Humanitarian Assistance",
-    description:
-      "Providing compassionate support to individuals and families facing difficult circumstances and challenges.",
   },
   {
+    id: "communityDevelopment",
     icon: Leaf,
-    title: "Community Development",
-    description:
-      "Encouraging sustainable initiatives that strengthen communities and create opportunities for long-term growth.",
   },
   {
+    id: "youth",
     icon: BookOpen,
-    title: "Youth Empowerment",
-    description:
-      "Helping young people develop knowledge, skills, confidence, and opportunities to become positive contributors to society.",
   },
 ];
 
 export default function WhatWeDo() {
+  const t = useTranslations("About.WhatWeDo");
+
   return (
     <section className="relative overflow-hidden bg-background py-20 sm:py-24 lg:py-28">
       {/* Background decoration */}
@@ -66,18 +57,16 @@ export default function WhatWeDo() {
             variant="outline"
             className="rounded-full border-primary/20 bg-primary/5 px-4 py-1.5 text-primary"
           >
-            What We Do
+            {t("badge")}
           </Badge>
 
           <h2 className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-            Turning Our Mission Into{" "}
-            <span className="text-primary">Meaningful Action</span>
+            {t("title")}{" "}
+            <span className="text-primary">{t("titleHighlight")}</span>
           </h2>
 
           <p className="mt-5 text-base leading-7 text-muted-foreground sm:text-lg">
-            From education and community support to humanitarian assistance and
-            youth empowerment, we work across different areas to create positive
-            and lasting change.
+            {t("description")}
           </p>
         </div>
 
@@ -88,7 +77,7 @@ export default function WhatWeDo() {
 
             return (
               <Card
-                key={area.title}
+                key={area.id}
                 className="group border-border/60 bg-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg"
               >
                 <CardContent className="p-7 sm:p-8">
@@ -99,12 +88,12 @@ export default function WhatWeDo() {
 
                   {/* Title */}
                   <h3 className="mt-6 text-xl font-semibold tracking-tight transition-colors duration-300 group-hover:text-primary">
-                    {area.title}
+                    {t(`areas.${area.id}.title`)}
                   </h3>
 
                   {/* Description */}
                   <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                    {area.description}
+                    {t(`areas.${area.id}.description`)}
                   </p>
 
                   {/* Bottom indicator */}
@@ -121,8 +110,9 @@ export default function WhatWeDo() {
             href="/projects"
             className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
           >
-            Explore Our Projects
-            <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+            {t("cta")}
+
+            <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </div>

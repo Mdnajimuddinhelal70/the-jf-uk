@@ -1,0 +1,33 @@
+{
+  "badge": "What We Do",
+  "title": "Turning Our Mission Into",
+  "titleHighlight": "Meaningful Action",
+  "description": "From education and community support to humanitarian assistance and youth empowerment, we work across different areas to create positive and lasting change.",
+  "cta": "Explore Our Projects",
+  "areas": {
+    "education": {
+      "title": "Education",
+      "description": "Supporting access to learning, educational opportunities, and initiatives that help people build a better future."
+    },
+    "communitySupport": {
+      "title": "Community Support",
+      "description": "Working alongside communities to understand their needs and provide meaningful support where it matters most."
+    },
+    "health": {
+      "title": "Health & Wellbeing",
+      "description": "Supporting initiatives that promote healthier lives, wellbeing, and access to essential community resources."
+    },
+    "humanitarian": {
+      "title": "Humanitarian Assistance",
+      "description": "Providing compassionate support to individuals and families facing difficult circumstances and challenges."
+    },
+    "communityDevelopment": {
+      "title": "Community Development",
+      "description": "Encouraging sustainable initiatives that strengthen communities and create opportunities for long-term growth."
+    },
+    "youth": {
+      "title": "Youth Empowerment",
+      "description": "Helping young people develop knowledge, skills, confidence, and opportunities to become positive contributors to society."
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "badge": "Our Lifetime Donors",
+  "title": "Honoring Those Who",
+  "titleHighlight": "Stand With Us",
+  "description": "We are deeply grateful to the individuals who have made a lasting commitment to supporting our foundation and its mission.",
+  "lifetimeDonor": "Lifetime Donor",
+  "donors": {
+    "1": {
+      "name": "Donor Name",
+      "role": "Lifetime Donor",
+      "address": "Donor Address, Bangladesh",
+      "description": "A dedicated supporter who has made a lasting commitment to helping our foundation create meaningful change in communities."
+    }
+  }
+}

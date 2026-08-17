@@ -1,9 +1,12 @@
 import { ArrowRight, HeartHandshake } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 import { Badge } from "@/components/ui/badge";
 
 export default function AboutHero() {
+  const t = useTranslations("About.AboutHero");
+
   return (
     <section className="relative overflow-hidden bg-muted/30">
       {/* Background decoration */}
@@ -19,30 +22,30 @@ export default function AboutHero() {
             className="rounded-full border-primary/20 bg-primary/5 px-4 py-1.5 text-primary"
           >
             <HeartHandshake className="mr-2 h-4 w-4" />
-            About Our Foundation
+
+            {t("badge")}
           </Badge>
 
           {/* Heading */}
           <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-            Creating Change, <span className="text-primary">Together</span>
+            {t("title")}{" "}
+            <span className="text-primary">{t("titleHighlight")}</span>
           </h1>
 
           {/* Description */}
           <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
-            We are a community-focused foundation dedicated to empowering
-            people, supporting meaningful initiatives, and building a better
-            future through compassion, collaboration, and action.
+            {t("description")}
           </p>
 
           {/* Breadcrumb / Navigation */}
           <div className="mt-8 flex flex-wrap items-center justify-center gap-2 text-sm text-muted-foreground">
             <Link href="/" className="transition-colors hover:text-primary">
-              Home
+              {t("home")}
             </Link>
 
             <ArrowRight className="h-4 w-4" />
 
-            <span className="font-medium text-foreground">About</span>
+            <span className="font-medium text-foreground">{t("about")}</span>
           </div>
         </div>
       </div>

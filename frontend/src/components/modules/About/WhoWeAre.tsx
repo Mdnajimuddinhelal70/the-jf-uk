@@ -5,30 +5,30 @@ import {
   Target,
   UsersRound,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
 import Link from "next/link";
 
 import { Badge } from "@/components/ui/badge";
-import Image from "next/image";
 
 const highlights = [
   {
+    id: "community",
     icon: UsersRound,
-    title: "Community Focused",
-    description: "Putting people and communities at the heart of our work.",
   },
   {
+    id: "purpose",
     icon: Target,
-    title: "Purpose Driven",
-    description: "Working with clear goals to create meaningful change.",
   },
   {
+    id: "impact",
     icon: Sparkles,
-    title: "Impact Oriented",
-    description: "Turning ideas and compassion into positive action.",
   },
 ];
 
 export default function WhoWeAre() {
+  const t = useTranslations("About.WhoWeAre");
+
   return (
     <section className="relative overflow-hidden bg-muted/30 py-20 sm:py-24 lg:py-28">
       {/* Background decoration */}
@@ -42,7 +42,7 @@ export default function WhoWeAre() {
               <div className="aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/5]">
                 <Image
                   src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1200&q=80"
-                  alt="Our Foundation"
+                  alt={t("imageAlt")}
                   className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
                   width={800}
                   height={1000}
@@ -58,9 +58,12 @@ export default function WhoWeAre() {
                 </div>
 
                 <div>
-                  <p className="text-2xl font-bold">Together</p>
+                  <p className="text-2xl font-bold">
+                    {t("floatingCard.title")}
+                  </p>
+
                   <p className="text-xs text-muted-foreground">
-                    Creating meaningful change
+                    {t("floatingCard.description")}
                   </p>
                 </div>
               </div>
@@ -69,29 +72,27 @@ export default function WhoWeAre() {
 
           {/* Content */}
           <div className="lg:py-6">
+            {/* Badge */}
             <Badge
               variant="outline"
               className="rounded-full border-primary/20 bg-primary/5 px-4 py-1.5 text-primary"
             >
-              Who We Are
+              {t("badge")}
             </Badge>
 
+            {/* Heading */}
             <h2 className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-              A Foundation Built on{" "}
-              <span className="text-primary">Purpose & Compassion</span>
+              {t("title")}{" "}
+              <span className="text-primary">{t("titleHighlight")}</span>
             </h2>
 
+            {/* Description */}
             <p className="mt-6 text-base leading-7 text-muted-foreground sm:text-lg">
-              We are a community-focused foundation committed to creating
-              opportunities, empowering people, and supporting initiatives that
-              contribute to a stronger and more inclusive society.
+              {t("description")}
             </p>
 
             <p className="mt-4 text-base leading-7 text-muted-foreground">
-              Our work is driven by the belief that meaningful change begins
-              when people come together with a shared purpose. Through
-              collaboration, compassion, and responsible action, we work to
-              address real challenges and create lasting impact.
+              {t("description2")}
             </p>
 
             {/* Highlights */}
@@ -100,16 +101,18 @@ export default function WhoWeAre() {
                 const Icon = item.icon;
 
                 return (
-                  <div key={item.title} className="flex gap-4">
+                  <div key={item.id} className="flex gap-4">
                     <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10">
                       <Icon className="h-5 w-5 text-primary" />
                     </div>
 
                     <div>
-                      <h3 className="font-semibold">{item.title}</h3>
+                      <h3 className="font-semibold">
+                        {t(`highlights.${item.id}.title`)}
+                      </h3>
 
                       <p className="mt-1 text-sm leading-6 text-muted-foreground">
-                        {item.description}
+                        {t(`highlights.${item.id}.description`)}
                       </p>
                     </div>
                   </div>
@@ -123,8 +126,9 @@ export default function WhoWeAre() {
                 href="/projects"
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg"
               >
-                Explore Our Work
-                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                {t("cta")}
+
+                <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </div>

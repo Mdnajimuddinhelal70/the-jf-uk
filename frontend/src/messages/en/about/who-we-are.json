@@ -1,0 +1,27 @@
+{
+  "badge": "Who We Are",
+  "title": "A Foundation Built on",
+  "titleHighlight": "Purpose & Compassion",
+  "description": "We are a community-focused foundation committed to creating opportunities, empowering people, and supporting initiatives that contribute to a stronger and more inclusive society.",
+  "description2": "Our work is driven by the belief that meaningful change begins when people come together with a shared purpose. Through collaboration, compassion, and responsible action, we work to address real challenges and create lasting impact.",
+  "imageAlt": "Our Foundation",
+  "floatingCard": {
+    "title": "Together",
+    "description": "Creating meaningful change"
+  },
+  "highlights": {
+    "community": {
+      "title": "Community Focused",
+      "description": "Putting people and communities at the heart of our work."
+    },
+    "purpose": {
+      "title": "Purpose Driven",
+      "description": "Working with clear goals to create meaningful change."
+    },
+    "impact": {
+      "title": "Impact Oriented",
+      "description": "Turning ideas and compassion into positive action."
+    }
+  },
+  "cta": "Explore Our Work"
+}
