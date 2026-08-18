@@ -1,0 +1,23 @@
+{
+  "badge": "Quick Help",
+  "title": "Frequently Asked Questions",
+  "description": "Find quick answers to some of the questions we receive most often. If you still need help, feel free to reach out to us.",
+  "items": [
+    {
+      "question": "How can I contact the foundation?",
+      "answer": "You can contact us through the contact form on this page, by email, or by phone during our office hours."
+    },
+    {
+      "question": "How can I support the foundation?",
+      "answer": "You can support our mission by making a contribution, volunteering your time, or getting involved with our community initiatives."
+    },
+    {
+      "question": "Can I volunteer with the foundation?",
+      "answer": "Yes. We welcome people who are interested in contributing their time, skills, and experience to our initiatives."
+    },
+    {
+      "question": "Can organizations collaborate with us?",
+      "answer": "Absolutely. We are open to meaningful partnerships and collaborations that align with our mission and create positive community impact."
+    }
+  ]
+}

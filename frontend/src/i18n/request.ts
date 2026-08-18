@@ -54,6 +54,18 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const lifetimeDonorMessages = (
     await import(`../messages/${locale}/about/lifetime-donor.json`)
   ).default;
+  const contactHeroMessages = (
+    await import(`../messages/${locale}/contact/hero.json`)
+  ).default;
+  const contactSectionMessages = (
+    await import(`../messages/${locale}/contact/contact-section.json`)
+  ).default;
+  const contactLocationMessages = (
+    await import(`../messages/${locale}/contact/location.json`)
+  ).default;
+  const contactFAQMessages = (
+    await import(`../messages/${locale}/contact/faq.json`)
+  ).default;
   return {
     locale,
     messages: {
@@ -77,6 +89,15 @@ export default getRequestConfig(async ({ requestLocale }) => {
         WhoWeAre: whoWeAreMessages,
         WhatWeDo: whatWeDoMessages,
         LifetimeDonor: lifetimeDonorMessages,
+      },
+      Contact: {
+        ...baseMessages.Contact,
+
+        Hero: contactHeroMessages,
+        ContactSection: contactSectionMessages,
+        Location: contactLocationMessages,
+        FAQ: contactFAQMessages,
+        // CTA: contactCTAMessages,
       },
     },
   };

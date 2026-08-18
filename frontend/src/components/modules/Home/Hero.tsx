@@ -32,7 +32,7 @@ export default function Hero() {
   const projectsHref = `/${locale}/projects`;
 
   return (
-    <section className="relative overflow-hidden bg-[#f7faf8]">
+    <section className="relative overflow-hidden bg-blue-400">
       {/* Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-0 top-0 h-[500px] w-[500px] rounded-full bg-emerald-100/50 blur-3xl" />
@@ -55,13 +55,13 @@ export default function Hero() {
             </div>
 
             {/* Heading */}
-            <h1 className="text-4xl font-bold leading-[1.08] tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl">
+            <h1 className="text-4xl font-bold leading-[1.08] tracking-tight text-shadow-yellow-600 sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl">
               {t("title")}{" "}
-              <span className="text-emerald-600">{t("titleHighlight")}</span>
+              <span className="text-white">{t("titleHighlight")}</span>
             </h1>
 
             {/* Description */}
-            <p className="mt-6 max-w-xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
+            <p className="mt-6 max-w-xl text-base leading-7 text-black sm:text-lg sm:leading-8">
               {t("description")}
             </p>
 

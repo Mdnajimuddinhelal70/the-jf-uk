@@ -206,7 +206,7 @@ export default function Navbar() {
   ======================================================= */
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-blue-800">
       <div className="container mx-auto flex h-20 items-center justify-between px-4 lg:px-8">
         {/* =================================================
             LOGO
@@ -247,10 +247,8 @@ export default function Navbar() {
               <NavigationMenuItem key={item.href}>
                 <NavigationMenuLink
                   href={getLocalizedHref(item.href)}
-                  className={`group inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground ${
-                    isActive(item.href)
-                      ? "text-primary"
-                      : "text-muted-foreground"
+                  className={`group inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-white hover:text-black ${
+                    isActive(item.href) ? "text-primary" : "text-white"
                   }`}
                 >
                   {t(item.key)}
@@ -267,7 +265,7 @@ export default function Navbar() {
                 className={
                   workItems.some((item) => isActive(item.href))
                     ? "text-primary"
-                    : "text-muted-foreground"
+                    : "text-white"
                 }
               >
                 {t("ourWork")}

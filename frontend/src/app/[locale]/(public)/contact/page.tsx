@@ -1,4 +1,3 @@
-import ContactCTA from "@/components/modules/Contact/ContactCTA";
 import ContactFAQ from "@/components/modules/Contact/ContactFAQ";
 import ContactHero from "@/components/modules/Contact/ContactHero";
 import ContactLocation from "@/components/modules/Contact/ContactLocation";
@@ -11,7 +10,6 @@ const ContactPage = () => {
       <AboutContactSection />
       <ContactLocation />
       <ContactFAQ />
-      <ContactCTA />
     </div>
   );
 };

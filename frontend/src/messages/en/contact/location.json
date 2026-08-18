@@ -1,0 +1,20 @@
+{
+  "badge": "Find Us",
+  "title": "Visit Our Foundation",
+  "description": "We would be happy to welcome you. Find our office location and visit us during our working hours.",
+  "office": {
+    "title": "Our Office",
+    "address": "Foundation Office",
+    "city": "Dhaka, Bangladesh"
+  },
+  "hours": {
+    "title": "Office Hours",
+    "days": "Saturday - Thursday",
+    "time": "9:00 AM - 5:00 PM"
+  },
+  "directions": "Get Directions",
+  "map": {
+    "title": "Foundation Location",
+    "description": "Interactive map will be added here."
+  }
+}
