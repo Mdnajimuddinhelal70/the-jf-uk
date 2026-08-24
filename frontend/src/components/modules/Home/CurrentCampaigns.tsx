@@ -16,7 +16,7 @@ const campaigns = [
     supporters: 124,
     daysLeft: 18,
     image:
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80",
+      "https://res.cloudinary.com/dpgjlcycl/image/upload/v1787586390/WhatsApp_Image_2026-08-24_at_7.51.17_PM_sisrxg.jpg",
   },
   {
     id: 2,
@@ -36,7 +36,7 @@ const campaigns = [
     supporters: 167,
     daysLeft: 12,
     image:
-      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80",
+      "https://res.cloudinary.com/dpgjlcycl/image/upload/v1787586527/WhatsApp_Image_2026-08-24_at_7.54.12_PM_tdl5sb.jpg",
   },
 ] as const;
 
@@ -74,7 +74,7 @@ export default function CurrentCampaigns() {
               <span className="text-primary">{t("titleHighlight")}</span>
             </h2>
 
-            <p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg">
+            <p className="mt-5 max-w-xl text-base leading-7 sm:text-lg">
               {t("description")}
             </p>
           </div>
@@ -132,7 +132,7 @@ export default function CurrentCampaigns() {
 
                 <CardContent className="p-6">
                   {/* Location */}
-                  <div className="mb-3 flex items-center gap-1.5 text-xs text-muted-foreground">
+                  <div className="mb-3 flex items-center gap-1.5 text-xs">
                     <MapPin className="h-3.5 w-3.5" />
 
                     {t(`campaigns.${campaign.key}.location`)}
@@ -144,7 +144,7 @@ export default function CurrentCampaigns() {
                   </h3>
 
                   {/* Description */}
-                  <p className="mt-3 line-clamp-3 text-sm leading-6 text-muted-foreground">
+                  <p className="mt-3 line-clamp-3 text-sm leading-6">
                     {t(`campaigns.${campaign.key}.description`)}
                   </p>
 
@@ -160,7 +160,7 @@ export default function CurrentCampaigns() {
 
                     <Progress value={progress} className="h-2" />
 
-                    <div className="mt-2 flex items-center justify-between text-xs text-muted-foreground">
+                    <div className="mt-2 flex items-center justify-between text-xs">
                       <span>
                         {t("goal", {
                           amount: formatAmount(campaign.goal),

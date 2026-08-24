@@ -51,7 +51,7 @@ export default function MobileNav({
         {/* Mobile Sheet */}
         <SheetContent
           side="right"
-          className="w-[85%] border-l border-white/10 bg-blue-800 text-white sm:max-w-sm"
+          className="w-[85%] border-l border-white/10 bg-green-800 text-white sm:max-w-sm"
         >
           {/* Mobile Header */}
           <SheetHeader className="border-b border-white/10 pb-5">

@@ -92,18 +92,16 @@ export default function ChairmanProfile() {
                   {t("chairman.name")}
                 </h3>
 
-                <p className="mt-2 text-sm text-muted-foreground">
-                  {t("chairman.position")}
-                </p>
+                <p className="mt-2 text-sm ">{t("chairman.position")}</p>
               </div>
 
               {/* Biography */}
               <div className="mt-7">
-                <p className="text-sm leading-7 text-muted-foreground sm:text-base">
+                <p className="text-sm leading-7  sm:text-base">
                   {t("chairman.biography.paragraph1")}
                 </p>
 
-                <p className="mt-4 text-sm leading-7 text-muted-foreground sm:text-base">
+                <p className="mt-4 text-sm leading-7 sm:text-base">
                   {t("chairman.biography.paragraph2")}
                 </p>
               </div>
@@ -117,7 +115,7 @@ export default function ChairmanProfile() {
                   </div>
 
                   <div>
-                    <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                    <p className="text-xs font-medium uppercase tracking-wide ">
                       {t("chairman.details.education.label")}
                     </p>
 
@@ -134,7 +132,7 @@ export default function ChairmanProfile() {
                   </div>
 
                   <div>
-                    <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                    <p className="text-xs font-medium uppercase tracking-wide ">
                       {t("chairman.details.experience.label")}
                     </p>
 
@@ -151,7 +149,7 @@ export default function ChairmanProfile() {
                   </div>
 
                   <div>
-                    <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                    <p className="text-xs font-medium uppercase tracking-wide">
                       {t("chairman.details.location.label")}
                     </p>
 
@@ -168,7 +166,7 @@ export default function ChairmanProfile() {
                   </div>
 
                   <div>
-                    <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                    <p className="text-xs font-medium uppercase tracking-wide">
                       {t("chairman.details.leadership.label")}
                     </p>
 

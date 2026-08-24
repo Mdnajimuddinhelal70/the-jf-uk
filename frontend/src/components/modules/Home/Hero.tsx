@@ -9,15 +9,15 @@ import { Button } from "@/components/ui/button";
 
 const images = [
   {
-    src: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80",
+    src: "https://res.cloudinary.com/dpgjlcycl/image/upload/v1787589598/WhatsApp_Image_2026-08-24_at_8.09.39_PM_hcwdly.jpg",
     altKey: "imageAlt1",
   },
   {
-    src: "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=1200&q=80",
+    src: "https://res.cloudinary.com/dpgjlcycl/image/upload/v1787589502/WhatsApp_Image_2026-08-24_at_7.54.01_PM_alq2tu.jpg",
     altKey: "imageAlt2",
   },
   {
-    src: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80",
+    src: "https://res.cloudinary.com/dpgjlcycl/image/upload/v1787583557/WhatsApp_Image_2026-08-24_at_8.11.46_PM_txd8qu.jpg",
     altKey: "imageAlt3",
   },
 ];
@@ -32,7 +32,7 @@ export default function Hero() {
   const projectsHref = `/${locale}/projects`;
 
   return (
-    <section className="relative overflow-hidden bg-blue-400">
+    <section className="relative overflow-hidden bg-green-400">
       {/* Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-0 top-0 h-[500px] w-[500px] rounded-full bg-emerald-100/50 blur-3xl" />
@@ -49,7 +49,7 @@ export default function Hero() {
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-4 py-2 shadow-sm">
               <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-600" />
 
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-700 sm:text-sm">
+              <span className="text-xs font-semibold uppercase text-emerald-700 sm:text-sm">
                 {t("badge")}
               </span>
             </div>
@@ -111,7 +111,7 @@ export default function Hero() {
                   {t("livesSupported")}
                 </p>
 
-                <p className="text-sm text-slate-500">{t("difference")}</p>
+                <p className="text-sm text-black">{t("difference")}</p>
               </div>
             </div>
           </div>

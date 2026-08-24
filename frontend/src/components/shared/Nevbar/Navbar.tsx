@@ -89,7 +89,7 @@ export default function Navbar() {
   const isWorkActive = workItems.some((item) => isActive(item.href));
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-blue-800 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-blue-800/95">
+    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-green-800 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-green-800/95">
       <div className="container mx-auto flex h-20 items-center justify-between px-4 lg:px-8">
         <NavbarLogo href={getLocalizedHref("/")} />
 

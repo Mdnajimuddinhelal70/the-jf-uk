@@ -49,7 +49,7 @@ export default function AboutFoundation() {
             <span className="text-primary">{t("titleHighlight")}</span>
           </h2>
 
-          <p className="mt-5 text-base leading-7 text-muted-foreground sm:text-lg">
+          <p className="mt-5 text-base leading-7 sm:text-lg">
             {t("description")}
           </p>
         </div>
@@ -67,7 +67,7 @@ export default function AboutFoundation() {
 
                   <p className="text-xl font-semibold">{t("impactTitle")}</p>
 
-                  <p className="mx-auto mt-2 max-w-xs text-sm text-muted-foreground">
+                  <p className="mx-auto mt-2 max-w-xs text-sm">
                     {t("impactDescription")}
                   </p>
                 </div>
@@ -83,9 +83,7 @@ export default function AboutFoundation() {
 
                 <p className="text-2xl font-bold">100%</p>
 
-                <p className="text-sm text-muted-foreground">
-                  {t("commitment")}
-                </p>
+                <p className="text-sm">{t("commitment")}</p>
               </CardContent>
             </Card>
           </div>
@@ -100,13 +98,9 @@ export default function AboutFoundation() {
               {t("heading")}
             </h3>
 
-            <p className="mt-5 leading-7 text-muted-foreground">
-              {t("paragraphOne")}
-            </p>
+            <p className="mt-5 leading-7 ">{t("paragraphOne")}</p>
 
-            <p className="mt-4 leading-7 text-muted-foreground">
-              {t("paragraphTwo")}
-            </p>
+            <p className="mt-4 leading-7 ">{t("paragraphTwo")}</p>
 
             <Button className="mt-7 rounded-full">
               <Link href="/about" className="flex items-center">
@@ -135,9 +129,7 @@ export default function AboutFoundation() {
 
                   <h4 className="text-lg font-semibold">{item.title}</h4>
 
-                  <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                    {item.description}
-                  </p>
+                  <p className="mt-3 text-sm leading-6">{item.description}</p>
                 </CardContent>
               </Card>
             );

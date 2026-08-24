@@ -6,13 +6,13 @@ import Link from "next/link";
 export default function ActionCTA() {
   const t = useTranslations("Home.ActionCTA");
   return (
-    <section className="relative overflow-hidden bg-background py-20 sm:py-24 lg:py-28">
+    <section className="relative overflow-hidden py-20 sm:py-24 lg:py-28">
       {/* Background decoration */}
       <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[500px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-3xl" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main CTA */}
-        <div className="relative overflow-hidden rounded-3xl bg-primary text-primary-foreground">
+        <div className="relative overflow-hidden rounded-3xl bg-green-500 text-primary-foreground">
           {/* Decorative circles */}
           <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full border border-primary-foreground/10" />
 
@@ -29,11 +29,11 @@ export default function ActionCTA() {
                 {t("badge")}
               </p>
 
-              <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+              <h2 className="mt-3 text-3xl text-black font-bold tracking-tight sm:text-4xl lg:text-5xl">
                 {t("title")}
               </h2>
 
-              <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-primary-foreground/80 sm:text-lg">
+              <p className="mx-auto mt-5 max-w-2xl text-black leading-7 sm:text-lg">
                 {t("description")}
               </p>
             </div>
@@ -41,7 +41,7 @@ export default function ActionCTA() {
             {/* Actions */}
             <div className="mx-auto mt-10 grid max-w-4xl gap-5 md:grid-cols-2">
               {/* Volunteer */}
-              <Card className="border-0 bg-primary-foreground/10 text-primary-foreground shadow-none backdrop-blur-sm">
+              <Card className="border-0 bg-primary-foreground/10 text-black shadow-none backdrop-blur-sm">
                 <CardContent className="p-7 sm:p-8">
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-foreground/10">
                     <UsersRound className="h-6 w-6" />
@@ -51,7 +51,7 @@ export default function ActionCTA() {
                     {t("volunteer.title")}
                   </h3>
 
-                  <p className="mt-3 text-sm leading-6 text-primary-foreground/70">
+                  <p className="mt-3 text-sm leading-6 text-black">
                     {t("volunteer.description")}
                   </p>
 
@@ -66,7 +66,7 @@ export default function ActionCTA() {
               </Card>
 
               {/* Donation */}
-              <Card className="border-0 bg-primary-foreground/10 text-primary-foreground shadow-none backdrop-blur-sm">
+              <Card className="border-0 bg-primary-foreground/10 text-black shadow-none backdrop-blur-sm">
                 <CardContent className="p-7 sm:p-8">
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-foreground/10">
                     <Heart className="h-6 w-6" />
@@ -76,7 +76,7 @@ export default function ActionCTA() {
                     {t("donation.title")}
                   </h3>
 
-                  <p className="mt-3 text-sm leading-6 text-primary-foreground/70">
+                  <p className="mt-3 text-sm leading-6 text-black">
                     {t("donation.description")}
                   </p>
 
