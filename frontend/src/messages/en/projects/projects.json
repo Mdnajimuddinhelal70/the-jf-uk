@@ -1,0 +1,23 @@
+{
+  "badge": "Our Projects",
+  "title": "Creating Lasting Change Through Meaningful Projects",
+  "description": "We are committed to creating meaningful and lasting change by supporting communities through education, access to clean water, and safe housing.",
+  "learnMore": "Learn More",
+  "items": {
+    "education": {
+      "category": "Education",
+      "title": "Education Support Project",
+      "description": "We help underprivileged children access education, learning materials, scholarships, and opportunities to build a brighter future."
+    },
+    "water": {
+      "category": "Clean Water",
+      "title": "Clean Water Project",
+      "description": "We work to improve access to safe and clean drinking water for vulnerable communities facing water-related challenges."
+    },
+    "housing": {
+      "category": "Housing",
+      "title": "Housing Support Project",
+      "description": "We support vulnerable families by helping provide safer, more secure, and dignified living conditions."
+    }
+  }
+}

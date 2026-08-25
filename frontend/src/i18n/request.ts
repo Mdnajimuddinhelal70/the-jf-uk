@@ -66,6 +66,16 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const contactFAQMessages = (
     await import(`../messages/${locale}/contact/faq.json`)
   ).default;
+  const projectsSection = (
+    await import(`../messages/${locale}/projects/projects.json`)
+  ).default;
+  const galleryHeroMessages = (
+    await import(`../messages/${locale}/gallery/hero.json`)
+  ).default;
+  const gallerySectionMessages = (
+    await import(`../messages/${locale}/gallery/gallerySection.json`)
+  ).default;
+
   return {
     locale,
     messages: {
@@ -98,6 +108,15 @@ export default getRequestConfig(async ({ requestLocale }) => {
         Location: contactLocationMessages,
         FAQ: contactFAQMessages,
         // CTA: contactCTAMessages,
+      },
+      Projects: {
+        ...baseMessages.Projects,
+        ProjectSection: projectsSection,
+      },
+      Gallery: {
+        ...baseMessages.Gallery,
+        Hero: galleryHeroMessages,
+        GallerySection: gallerySectionMessages,
       },
     },
   };

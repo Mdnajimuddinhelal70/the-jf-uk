@@ -5,12 +5,12 @@
   "office": {
     "title": "Our Office",
     "address": "Foundation Office",
-    "city": "Dhaka, Bangladesh"
+    "city": "UK, United Kingdom"
   },
   "hours": {
     "title": "Office Hours",
-    "days": "Saturday - Thursday",
-    "time": "9:00 AM - 5:00 PM"
+    "days": "Everyday"
+    
   },
   "directions": "Get Directions",
   "map": {

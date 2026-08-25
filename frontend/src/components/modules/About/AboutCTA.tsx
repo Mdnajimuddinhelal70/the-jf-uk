@@ -11,7 +11,7 @@ export default function AboutCTA() {
 
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main CTA */}
-        <div className="relative overflow-hidden rounded-3xl bg-primary text-primary-foreground">
+        <div className="relative overflow-hidden rounded-3xl bg-green-600 text-primary-foreground">
           {/* Decorative circles */}
           <div className="pointer-events-none absolute -right-32 -top-32 h-72 w-72 rounded-full border border-primary-foreground/10" />
 

@@ -27,6 +27,10 @@ const workItems: NavItem[] = [
     key: "events",
     href: "/events",
   },
+  {
+    key: "gallery",
+    href: "/gallery",
+  },
 ];
 
 const navItems: NavItem[] = [

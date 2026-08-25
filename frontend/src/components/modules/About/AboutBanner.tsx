@@ -10,17 +10,17 @@ const slides = [
   {
     id: 1,
     image:
-      "https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1600&q=85",
+      "https://res.cloudinary.com/dpgjlcycl/image/upload/v1787664089/jf-uk-banner_nuv3o8.jpg",
   },
   {
     id: 2,
     image:
-      "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=1600&q=85",
+      "https://res.cloudinary.com/dpgjlcycl/image/upload/v1787589502/WhatsApp_Image_2026-08-24_at_7.54.01_PM_alq2tu.jpg",
   },
   {
     id: 3,
     image:
-      "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1600&q=85",
+      "https://res.cloudinary.com/dpgjlcycl/image/upload/v1787586390/WhatsApp_Image_2026-08-24_at_7.51.17_PM_sisrxg.jpg",
   },
 ];
 
@@ -61,7 +61,7 @@ export default function AboutBanner() {
           />
 
           {/* Dark overlay */}
-          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute" />
 
           {/* Gradient */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/20" />

@@ -8,7 +8,7 @@ export default function ContactHero() {
   const t = useTranslations("Contact.Hero");
 
   return (
-    <section className="relative overflow-hidden bg-blue-400">
+    <section className="relative overflow-hidden bg-green-400">
       {/* Background decoration */}
       <div className="pointer-events-none absolute -left-40 top-10 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
 

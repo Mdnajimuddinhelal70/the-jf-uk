@@ -41,7 +41,7 @@ export default function WhoWeAre() {
             <div className="relative overflow-hidden rounded-3xl border bg-background shadow-sm">
               <div className="aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/5]">
                 <Image
-                  src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1200&q=80"
+                  src="https://res.cloudinary.com/dpgjlcycl/image/upload/v1787664089/jf-uk-banner_nuv3o8.jpg"
                   alt={t("imageAlt")}
                   className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
                   width={800}

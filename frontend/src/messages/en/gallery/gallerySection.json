@@ -1,0 +1,13 @@
+{
+  "badge": "Our Moments",
+  "title": "Stories Captured Through Our Lens",
+  "description": "A glimpse into the people, events, and communities we are privileged to support.",
+  "categories": {
+    "all": "All",
+    "events": "Events",
+    "education": "Education",
+    "community": "Community",
+    "charity": "Charity"
+  },
+  "empty": "No images found in this category."
+}

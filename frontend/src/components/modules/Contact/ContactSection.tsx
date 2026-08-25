@@ -11,6 +11,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import Link from "next/link";
 
 const contactInfo = [
   {
@@ -66,7 +67,7 @@ export default function AboutContactSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-10">
           {/* Contact Information */}
-          <Card className="overflow-hidden border-border/60 shadow-sm">
+          <Card className="bg-green-400 overflow-hidden border-border/60 shadow-sm">
             <CardContent className="p-7 sm:p-9">
               {/* Eyebrow */}
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
@@ -89,7 +90,7 @@ export default function AboutContactSection() {
                   const Icon = item.icon;
 
                   return (
-                    <a
+                    <Link
                       key={item.key}
                       href={item.href}
                       className="group flex gap-4"
@@ -109,7 +110,7 @@ export default function AboutContactSection() {
                           {t(`contactInfo.items.${item.key}.value`)}
                         </p>
                       </div>
-                    </a>
+                    </Link>
                   );
                 })}
               </div>
@@ -123,14 +124,14 @@ export default function AboutContactSection() {
                     const Icon = social.icon;
 
                     return (
-                      <a
+                      <Link
                         key={social.key}
                         href={social.href}
                         aria-label={t(`social.${social.key}`)}
                         className="flex h-10 w-10 items-center justify-center rounded-full border text-muted-foreground transition-all hover:border-primary hover:bg-primary hover:text-primary-foreground"
                       >
                         <Icon className="h-4 w-4" />
-                      </a>
+                      </Link>
                     );
                   })}
                 </div>
@@ -139,7 +140,7 @@ export default function AboutContactSection() {
           </Card>
 
           {/* Contact Form */}
-          <Card className="border-border/60 shadow-sm">
+          <Card className="bg-green-400 border-border/60 shadow-sm">
             <CardContent className="p-7 sm:p-9">
               {/* Form Header */}
               <div>
