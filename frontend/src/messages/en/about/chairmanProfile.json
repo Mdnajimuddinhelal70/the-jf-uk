@@ -17,17 +17,9 @@
     },
 
     "details": {
-      "education": {
-        "label": "Education",
-        "value": "Master's Degree"
-      },
-      "experience": {
-        "label": "Experience",
-        "value": "15+ Years"
-      },
       "location": {
         "label": "Based In",
-        "value": "Bangladesh"
+        "value": "United Kingdom"
       },
       "leadership": {
         "label": "Leadership",

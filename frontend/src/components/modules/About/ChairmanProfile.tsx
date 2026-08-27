@@ -1,11 +1,4 @@
-import {
-  ArrowRight,
-  Award,
-  GraduationCap,
-  HeartHandshake,
-  MapPin,
-  Quote,
-} from "lucide-react";
+import { ArrowRight, HeartHandshake, MapPin, Quote } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
@@ -109,38 +102,6 @@ export default function ChairmanProfile() {
               {/* Details */}
               <div className="mt-8 grid gap-4 border-t pt-7 sm:grid-cols-2">
                 {/* Education */}
-                <div className="flex gap-3">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                    <GraduationCap className="h-5 w-5 text-primary" />
-                  </div>
-
-                  <div>
-                    <p className="text-xs font-medium uppercase tracking-wide ">
-                      {t("chairman.details.education.label")}
-                    </p>
-
-                    <p className="mt-1 text-sm font-semibold">
-                      {t("chairman.details.education.value")}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Experience */}
-                <div className="flex gap-3">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                    <Award className="h-5 w-5 text-primary" />
-                  </div>
-
-                  <div>
-                    <p className="text-xs font-medium uppercase tracking-wide ">
-                      {t("chairman.details.experience.label")}
-                    </p>
-
-                    <p className="mt-1 text-sm font-semibold">
-                      {t("chairman.details.experience.value")}
-                    </p>
-                  </div>
-                </div>
 
                 {/* Location */}
                 <div className="flex gap-3">
