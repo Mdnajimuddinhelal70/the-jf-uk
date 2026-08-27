@@ -43,10 +43,6 @@ const navItems: NavItem[] = [
     href: "/about",
   },
   {
-    key: "news",
-    href: "/news",
-  },
-  {
     key: "contact",
     href: "/contact",
   },
