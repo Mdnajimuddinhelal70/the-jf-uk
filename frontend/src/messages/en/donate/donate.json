@@ -1,0 +1,19 @@
+{
+  "badge": "Make a Difference",
+  "title": "Your Donation Can",
+  "titleHighlight": "Change Lives",
+  "description": "Every contribution, no matter how small, helps us continue our work and create meaningful change in the lives of people and communities.",
+  "amount": {
+    "title": "Choose Your Donation",
+    "description": "Select an amount or enter your own contribution.",
+    "custom": "Custom Amount",
+    "placeholder": "Enter amount",
+    "selected": "Your selected donation"
+  },
+  "payment": {
+    "title": "Choose Payment Method",
+    "description": "Select your preferred payment option to continue."
+  },
+  "secureText": "Your generosity helps us support communities and continue creating a positive impact.",
+  "donateButton": "Donate"
+}

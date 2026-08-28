@@ -75,6 +75,9 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const gallerySectionMessages = (
     await import(`../messages/${locale}/gallery/gallerySection.json`)
   ).default;
+  const donateSectionMessages = (
+    await import(`../messages/${locale}/donate/donate.json`)
+  ).default;
 
   return {
     locale,
@@ -117,6 +120,10 @@ export default getRequestConfig(async ({ requestLocale }) => {
         ...baseMessages.Gallery,
         Hero: galleryHeroMessages,
         GallerySection: gallerySectionMessages,
+      },
+      Donate: {
+        ...baseMessages.Donate,
+        Donate: donateSectionMessages,
       },
     },
   };

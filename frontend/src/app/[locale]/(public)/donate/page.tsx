@@ -1,5 +1,11 @@
+import DonateSection from "@/components/modules/Donate/DonateSection";
+
 const DonatePage = () => {
-  return <div>DonatePage</div>;
+  return (
+    <div>
+      <DonateSection />
+    </div>
+  );
 };
 
 export default DonatePage;
