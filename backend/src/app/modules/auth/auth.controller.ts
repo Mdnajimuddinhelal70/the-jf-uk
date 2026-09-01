@@ -55,8 +55,24 @@ const getMe = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+const logoutAdmin = catchAsync(async (req: Request, res: Response) => {
+  res.clearCookie("accessToken", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax",
+  });
+
+  sendResponse(res, {
+    success: true,
+    statusCode: httpStatus.OK,
+    message: "Admin Logout Successfully",
+    data: null,
+  });
+});
+
 export const AdminController = {
   createAdmin,
   loginAdmin,
   getMe,
+  logoutAdmin,
 };

@@ -7,5 +7,6 @@ const router = Router();
 router.post("/create-admin", AdminController.createAdmin);
 router.post("/login", AdminController.loginAdmin);
 router.get("/me", checkAuth("ADMIN"), AdminController.getMe);
+router.post("/logout", AdminController.logoutAdmin);
 
 export const AuthRoutes = router;
