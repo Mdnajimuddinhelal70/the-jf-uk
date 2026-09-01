@@ -73,7 +73,18 @@ const loginAdmin = async (payload: { email: string; password: string }) => {
     accessToken,
   };
 };
+
+const getMe = async (adminId: string) => {
+  const admin = await Admin.findById(adminId);
+
+  if (!admin) {
+    throw new Error("Admin not found");
+  }
+  return admin;
+};
+
 export const authService = {
   createAdmin,
   loginAdmin,
+  getMe,
 };

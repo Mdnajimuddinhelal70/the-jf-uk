@@ -38,7 +38,25 @@ const loginAdmin = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+const getMe = catchAsync(async (req: Request, res: Response) => {
+  const adminId = req.user?.id;
+
+  if (!adminId) {
+    throw new Error("Unauthorized");
+  }
+
+  const admin = await authService.getMe(adminId);
+
+  sendResponse(res, {
+    success: true,
+    statusCode: httpStatus.OK,
+    message: "Admin Retrieved Successfully",
+    data: admin,
+  });
+});
+
 export const AdminController = {
   createAdmin,
   loginAdmin,
+  getMe,
 };
