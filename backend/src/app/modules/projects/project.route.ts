@@ -17,7 +17,7 @@ router.get("/:id", projectController.getProjectById);
 
 // Admin Routes
 router.post(
-  "/",
+  "/create-project",
   checkAuth("ADMIN"),
   validateRequest(createProjectValidation),
   projectController.createProject,
