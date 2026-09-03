@@ -95,14 +95,12 @@ export default function Navbar() {
       <div className="container mx-auto flex h-20 items-center justify-between px-4 lg:px-8">
         {/* Logo */}
         <Link href={getLocalizedHref("/")} className="flex items-center gap-2">
-          <div className="relative h-12 w-36 shrink-0 sm:h-14 sm:w-44">
+          <div className="relative h-10 w-24 shrink-0 sm:h-12 sm:w-28 md:h-14 md:w-32">
             <Image
               src={logo}
               alt="The Jannath Foundation UK"
               priority
-              width={90}
-              height={60}
-              className="object-contain object-left"
+              className="h-full w-auto object-contain object-left"
             />
           </div>
         </Link>
