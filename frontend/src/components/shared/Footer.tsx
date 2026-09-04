@@ -1,4 +1,5 @@
-import { ArrowRight, Heart, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 import {
@@ -10,17 +11,14 @@ import {
 
 const quickLinks = [
   { label: "About Us", href: "/about" },
-  { label: "Our Mission", href: "/mission" },
   { label: "Projects", href: "/projects" },
   { label: "Campaigns", href: "/campaigns" },
   { label: "Events", href: "/events" },
 ];
 
 const supportLinks = [
-  { label: "Become a Volunteer", href: "/volunteer" },
   { label: "Donate", href: "/donate" },
-  { label: "Latest News", href: "/news" },
-  { label: "Partners", href: "/partners" },
+
   { label: "Contact Us", href: "/contact" },
 ];
 
@@ -56,25 +54,29 @@ export default function Footer() {
           {/* Brand */}
           <div className="max-w-sm">
             <Link href="/" className="inline-flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-                <Heart className="h-5 w-5 fill-current" />
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl text-primary-foreground">
+                <Image
+                  src="https://res.cloudinary.com/dpgjlcycl/image/upload/v1788540660/small_logo_v3wstl.png"
+                  alt="Logo"
+                  width={60}
+                  height={60}
+                />
               </div>
 
               <div>
                 <span className="block text-lg font-bold tracking-tight">
-                  Your Foundation
-                </span>
-
-                <span className="block text-xs text-muted-foreground">
-                  Creating positive change
+                  The Jannath Foundation
                 </span>
               </div>
             </Link>
 
             <p className="mt-6 text-sm leading-7">
-              We are committed to empowering communities, supporting meaningful
-              initiatives, and creating lasting positive change through
-              compassion, collaboration, and action.
+              Together, we can bring hope, support those in need, and build a
+              better future.
+              <span className="block mt-2 text-stone-50">
+                একসাথে আমরা আশা ছড়িয়ে দিতে, অসহায় মানুষের পাশে দাঁড়াতে এবং একটি
+                সুন্দর ভবিষ্যৎ গড়তে পারি।
+              </span>
             </p>
 
             {/* Social Links */}
@@ -165,29 +167,29 @@ export default function Footer() {
               <div className="flex items-start gap-3 text-sm">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
 
-                <span>Dhaka, Bangladesh</span>
+                <span>United Kingdom</span>
               </div>
 
               <div className="flex items-center gap-3 text-sm ">
                 <Phone className="h-4 w-4 shrink-0 text-primary" />
 
-                <a
-                  href="tel:+8801000000000"
+                <Link
+                  href="tel:+447931791007"
                   className="transition-colors hover:text-primary"
                 >
-                  +880 1000-000000
-                </a>
+                  +447931791007
+                </Link>
               </div>
 
               <div className="flex items-center gap-3 text-sm">
                 <Mail className="h-4 w-4 shrink-0 text-primary" />
 
-                <a
+                <Link
                   href="mailto:info@example.org"
                   className="transition-colors hover:text-primary"
                 >
                   info@example.org
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -198,7 +200,8 @@ export default function Footer() {
       <div className="border-t">
         <div className="container mx-auto flex flex-col gap-4 px-4 py-5 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
           <p className="text-center text-xs text-muted-foreground lg:text-left">
-            © {new Date().getFullYear()} Your Foundation. All rights reserved.
+            © {new Date().getFullYear()} The Jannath Foundation. All rights
+            reserved.
           </p>
 
           <div className="flex items-center justify-center gap-5">

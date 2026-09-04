@@ -41,11 +41,11 @@ export default function WhoWeAre() {
             <div className="relative overflow-hidden rounded-3xl border bg-background shadow-sm">
               <div className="aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/5]">
                 <Image
-                  src="https://res.cloudinary.com/dpgjlcycl/image/upload/v1787664089/jf-uk-banner_nuv3o8.jpg"
+                  src="https://res.cloudinary.com/dpgjlcycl/image/upload/v1788535412/Gemini_Generated_Image_58j2xn58j2xn58j2_xciycp.jpg"
                   alt={t("imageAlt")}
-                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
-                  width={800}
-                  height={1000}
+                  fill
+                  sizes="100vw"
+                  className="object-cover"
                 />
               </div>
             </div>

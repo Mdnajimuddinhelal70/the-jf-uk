@@ -50,15 +50,6 @@ export default function ContactLocation() {
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
                   <Clock3 className="h-5 w-5 text-primary" />
                 </div>
-
-                <div>
-                  <p className="text-sm font-semibold">{t("hours.title")}</p>
-
-                  <p className="mt-1 text-sm leading-6 text-amber-50">
-                    {t("hours.days")}
-                    <br />
-                  </p>
-                </div>
               </div>
 
               {/* Directions Button */}

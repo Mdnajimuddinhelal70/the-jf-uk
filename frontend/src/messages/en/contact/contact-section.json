@@ -6,20 +6,17 @@
     "items": {
       "address": {
         "title": "Our Address",
-        "value": "Dhaka, Bangladesh"
+        "value": "United Kingdom"
       },
       "phone": {
         "title": "Phone Number",
-        "value": "+880 1000-000000"
+        "value": "+447931791007"
       },
       "email": {
         "title": "Email Address",
         "value": "info@example.org"
-      },
-      "hours": {
-        "title": "Office Hours",
-        "value": "Saturday - Thursday, 9:00 AM - 5:00 PM"
       }
+  
     }
   },
   "social": {

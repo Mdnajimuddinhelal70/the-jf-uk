@@ -6,19 +6,15 @@
     "items": {
       "address": {
         "title": "আমাদের ঠিকানা",
-        "value": "ঢাকা, বাংলাদেশ"
+        "value": "United Kingdom"
       },
       "phone": {
         "title": "ফোন নম্বর",
-        "value": "+৮৮০ ১০০০-০০০০০০"
+        "value": "+447931791007"
       },
       "email": {
         "title": "ইমেইল ঠিকানা",
         "value": "info@example.org"
-      },
-      "hours": {
-        "title": "অফিস সময়",
-        "value": "শনিবার - বৃহস্পতিবার, সকাল ৯:০০ - বিকাল ৫:০০"
       }
     }
   },

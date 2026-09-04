@@ -30,6 +30,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "swiperjs.com",
       },
+      {
+        protocol: "https",
+        hostname: "api.dicebear.com",
+      },
     ],
   },
 };

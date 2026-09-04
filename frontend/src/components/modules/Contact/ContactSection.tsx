@@ -1,4 +1,4 @@
-import { Clock3, Mail, MapPin, Phone, Send } from "lucide-react";
+import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { useTranslations } from "next-intl";
 import {
   FaFacebookF,
@@ -28,11 +28,6 @@ const contactInfo = [
     icon: Mail,
     key: "email",
     href: "mailto:info@example.org",
-  },
-  {
-    icon: Clock3,
-    key: "hours",
-    href: "#",
   },
 ];
 

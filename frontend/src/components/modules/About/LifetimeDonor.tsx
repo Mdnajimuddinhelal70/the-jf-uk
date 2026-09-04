@@ -9,7 +9,7 @@ const donors = [
   {
     id: 1,
     image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+      "https://res.cloudinary.com/dpgjlcycl/image/upload/v1777218755/samples/zoom.avif",
   },
 ];
 

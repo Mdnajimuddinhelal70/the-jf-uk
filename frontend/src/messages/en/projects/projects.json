@@ -1,23 +1,32 @@
 {
   "badge": "Our Projects",
-  "title": "Creating Lasting Change Through Meaningful Projects",
-  "description": "We are committed to creating meaningful and lasting change by supporting communities through education, access to clean water, and safe housing.",
-  "learnMore": "Learn More",
+  "title": "Making a Difference Through Action",
+  "description": "From supporting families in need to empowering students and communities, our projects are focused on creating meaningful and lasting change.",
+  "viewProject": "View Project",
   "items": {
-    "education": {
-      "category": "Education",
-      "title": "Education Support Project",
-      "description": "We help underprivileged children access education, learning materials, scholarships, and opportunities to build a brighter future."
+    "1": {
+      "title": "Relief Distribution for Rohingya Families",
+      "titleBn": "রোহিঙ্গা পরিবারগুলোর মাঝে ত্রাণ বিতরণ"
     },
-    "water": {
-      "category": "Clean Water",
-      "title": "Clean Water Project",
-      "description": "We work to improve access to safe and clean drinking water for vulnerable communities facing water-related challenges."
+    "2": {
+      "title": "Book Distribution Among Madrasa Students",
+      "titleBn": "মাদ্রাসার শিক্ষার্থীদের মাঝে কিতাব বিতরণ"
     },
-    "housing": {
-      "category": "Housing",
-      "title": "Housing Support Project",
-      "description": "We support vulnerable families by helping provide safer, more secure, and dignified living conditions."
+    "3": {
+      "title": "Relief Support for Families in Need",
+      "titleBn": "অসহায় পরিবারের মাঝে ত্রাণ সহায়তা"
+    },
+    "4": {
+      "title": "Madrasa Development Project",
+      "titleBn": "মাদ্রাসা উন্নয়ন কার্যক্রম"
+    },
+    "5": {
+      "title": "Food Distribution for People in Need",
+      "titleBn": "অসহায় মানুষের মাঝে খাদ্য বিতরণ"
+    },
+    "6": {
+      "title": "Madrasa Construction and Development Project",
+      "titleBn": "মাদরাসা নির্মাণ ও উন্নয়ন প্রকল্প"
     }
   }
 }

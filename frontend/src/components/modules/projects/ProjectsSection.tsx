@@ -1,26 +1,40 @@
 "use client";
 
-import { ArrowUpRight, BookOpen, Droplets, House } from "lucide-react";
+import { ArrowUpRight, HeartHandshake } from "lucide-react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import Link from "next/link";
-
-import { Card, CardContent } from "@/components/ui/card";
 
 const projects = [
   {
-    key: "education",
-    icon: BookOpen,
-    href: "/projects/education-support",
+    id: 1,
+    image:
+      "https://res.cloudinary.com/dpgjlcycl/image/upload/v1788499194/WhatsApp_Image_2026-09-04_at_11.11.30_AM_1_lsawfa.jpg",
   },
   {
-    key: "water",
-    icon: Droplets,
-    href: "/projects/clean-water",
+    id: 2,
+    image:
+      "https://res.cloudinary.com/dpgjlcycl/image/upload/v1788499195/WhatsApp_Image_2026-09-04_at_11.11.30_AM_ss4q6f.jpg",
   },
   {
-    key: "housing",
-    icon: House,
-    href: "/projects/housing-support",
+    id: 3,
+    image:
+      "https://res.cloudinary.com/dpgjlcycl/image/upload/v1787679524/WhatsApp_Image_2026-08-24_at_7.54.01_PM_l1nmdq.jpg",
+  },
+  {
+    id: 4,
+    image:
+      "https://res.cloudinary.com/dpgjlcycl/image/upload/v1788504694/Gemini_Generated_Image_p2bk5tp2bk5tp2bk_gcez50.jpg",
+  },
+  {
+    id: 5,
+    image:
+      "https://res.cloudinary.com/dpgjlcycl/image/upload/v1788540308/TranImg_hnnaw4.jpg",
+  },
+  {
+    id: 6,
+    image:
+      "https://res.cloudinary.com/dpgjlcycl/image/upload/v1787589403/WhatsApp_Image_2026-08-24_at_8.11.46_PM_m9vlhb.jpg",
   },
 ];
 
@@ -31,64 +45,73 @@ export default function ProjectsSection() {
     <section className="bg-background py-20 sm:py-24 lg:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+        <div className="mx-auto max-w-2xl text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-primary sm:text-sm">
+            <HeartHandshake className="h-4 w-4" />
             {t("badge")}
-          </p>
+          </div>
 
-          <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+          <h2 className="mt-5 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
             {t("title")}
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">
+          <p className="mt-4 text-sm leading-7 text-muted-foreground sm:text-base">
             {t("description")}
           </p>
         </div>
 
-        {/* Project Cards */}
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:mt-16 lg:grid-cols-3">
-          {projects.map((project) => {
-            const Icon = project.icon;
+        {/* Projects Grid */}
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project) => (
+            <article
+              key={project.id}
+              className="group overflow-hidden rounded-2xl border border-border/60 bg-card shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
+            >
+              {/* Image */}
+              <div className="relative aspect-[16/10] overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={t(`items.${project.id}.title`)}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
 
-            return (
-              <Card
-                key={project.key}
-                className="group relative overflow-hidden border-border/60 bg-card shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
-              >
-                <CardContent className="p-7 sm:p-8">
-                  {/* Icon */}
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-110">
-                    <Icon className="h-8 w-8" strokeWidth={1.8} />
-                  </div>
+                {/* Image Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent opacity-70 transition-opacity duration-500 group-hover:opacity-90" />
 
-                  {/* Content */}
-                  <p className="mt-7 text-xs font-semibold uppercase tracking-[0.16em] text-primary">
-                    {t(`items.${project.key}.category`)}
-                  </p>
+                {/* Project Number */}
+                <div className="absolute left-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/30 bg-black/20 text-xs font-semibold text-white backdrop-blur-md">
+                  {String(project.id).padStart(2, "0")}
+                </div>
+              </div>
 
-                  <h3 className="mt-2 text-2xl font-bold tracking-tight">
-                    {t(`items.${project.key}.title`)}
-                  </h3>
+              {/* Content */}
+              <div className="p-5 sm:p-6">
+                {/* English Title */}
+                <h3 className="text-xl font-bold leading-snug tracking-tight text-foreground transition-colors duration-300 group-hover:text-primary sm:text-2xl">
+                  {t(`items.${project.id}.title`)}
+                </h3>
 
-                  <p className="mt-4 text-sm leading-7 text-muted-foreground sm:text-base">
-                    {t(`items.${project.key}.description`)}
-                  </p>
+                {/* Bangla Title */}
+                <p className="mt-2 text-sm font-medium leading-6 text-muted-foreground">
+                  {t(`items.${project.id}.titleBn`)}
+                </p>
 
-                  {/* Learn More */}
-                  <Link
-                    href={project.href}
-                    className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-all duration-300 hover:gap-3"
-                  >
-                    {t("learnMore")}
-                    <ArrowUpRight className="h-4 w-4" />
-                  </Link>
-                </CardContent>
+                {/* Divider */}
+                <div className="my-5 h-px bg-border" />
 
-                {/* Decorative Circle */}
-                <div className="pointer-events-none absolute -bottom-16 -right-16 h-32 w-32 rounded-full bg-primary/5 transition-transform duration-500 group-hover:scale-150" />
-              </Card>
-            );
-          })}
+                {/* View Project */}
+                <Link
+                  href={`/projects/${project.id}`}
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-all duration-300 group-hover:gap-3"
+                >
+                  {t("viewProject")}
+                  <ArrowUpRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
