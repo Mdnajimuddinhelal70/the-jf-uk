@@ -128,3 +128,19 @@
     @apply font-sans;
   }
 }
+
+/* Banner Thumbnail */
+.banner-thumbs .swiper-slide {
+  opacity: 0.7;
+  border: 2px solid transparent;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.banner-thumbs .swiper-slide-thumb-active {
+  opacity: 1;
+  border-color: var(--primary);
+  transform: scale(1.05);
+}

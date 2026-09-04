@@ -61,7 +61,7 @@ export default function AboutBanner() {
           />
 
           {/* Gradient - stronger from bottom on mobile so text stays readable over a shorter banner */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10 sm:bg-gradient-to-r sm:from-black/70 sm:via-black/40 sm:to-black/20" />
+          <div className="absolute inset-0" />
         </div>
       ))}
 

@@ -1,5 +1,6 @@
 import AboutFoundation from "@/components/modules/Home/AboutFoundation";
 import ActionCTA from "@/components/modules/Home/ActionCTA";
+import BannerSwiper from "@/components/modules/Home/BannerSwiper";
 import CurrentCampaigns from "@/components/modules/Home/CurrentCampaigns";
 import Hero from "@/components/modules/Home/Hero";
 import HumanitarianActivities from "../../../components/modules/Home/HumanitarianActivities";
@@ -7,6 +8,7 @@ import HumanitarianActivities from "../../../components/modules/Home/Humanitaria
 export default function Home() {
   return (
     <main>
+      <BannerSwiper />
       <Hero />
       <AboutFoundation />
       {/* <OurMission /> */}

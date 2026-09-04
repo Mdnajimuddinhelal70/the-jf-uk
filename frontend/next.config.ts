@@ -26,6 +26,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "www.sslcommerz.com",
       },
+      {
+        protocol: "https",
+        hostname: "swiperjs.com",
+      },
     ],
   },
 };
