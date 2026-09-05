@@ -42,7 +42,7 @@ export default function ChairmanProfile() {
             {/* Chairman Image */}
             <div className="relative min-h-[520px] overflow-hidden bg-muted sm:min-h-[620px] lg:min-h-[700px]">
               <Image
-                src="https://res.cloudinary.com/dpgjlcycl/image/upload/v1786803130/ChairmanImg_mlerq7.jpg"
+                src="https://res.cloudinary.com/dpgjlcycl/image/upload/v1788627887/ChiarmanP_gkvafg.jpg"
                 alt={t("imageAlt")}
                 className="absolute inset-0 h-full w-full object-cover object-top"
                 width={800}

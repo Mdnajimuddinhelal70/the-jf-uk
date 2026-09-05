@@ -1,5 +1,4 @@
 import AboutBanner from "@/components/modules/About/AboutBanner";
-import AboutCTA from "@/components/modules/About/AboutCTA";
 import AboutHero from "@/components/modules/About/AboutHero";
 import ChairmanProfile from "@/components/modules/About/ChairmanProfile";
 import LifetimeDonor from "@/components/modules/About/LifetimeDonor";
@@ -15,7 +14,7 @@ const AboutPage = () => {
       <LifetimeDonor />
       <WhoWeAre />
       <WhatWeDo />
-      <AboutCTA />
+      {/* <AboutCTA /> */}
     </div>
   );
 };

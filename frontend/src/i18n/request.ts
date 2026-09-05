@@ -78,6 +78,9 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const donateSectionMessages = (
     await import(`../messages/${locale}/donate/donate.json`)
   ).default;
+  const founderSectionMessages = (
+    await import(`../messages/${locale}/home/founder.json`)
+  ).default;
 
   return {
     locale,
@@ -124,6 +127,9 @@ export default getRequestConfig(async ({ requestLocale }) => {
       Donate: {
         ...baseMessages.Donate,
         Donate: donateSectionMessages,
+      },
+      FounderSection: {
+        Section: founderSectionMessages,
       },
     },
   };

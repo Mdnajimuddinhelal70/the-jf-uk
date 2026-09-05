@@ -157,7 +157,6 @@ export default function CurrentCampaigns() {
 
                       <span className="text-muted-foreground">{progress}%</span>
                     </div>
-
                     <Progress value={progress} className="h-2" />
 
                     <div className="mt-2 flex items-center justify-between text-xs">

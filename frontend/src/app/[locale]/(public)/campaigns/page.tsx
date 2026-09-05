@@ -1,5 +1,11 @@
+import CurrentCampaigns from "@/components/modules/Home/CurrentCampaigns";
+
 const CampaignsPage = () => {
-  return <div>CampaignsPage</div>;
+  return (
+    <div>
+      <CurrentCampaigns />
+    </div>
+  );
 };
 
 export default CampaignsPage;

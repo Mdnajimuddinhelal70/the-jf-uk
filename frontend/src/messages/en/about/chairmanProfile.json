@@ -5,14 +5,14 @@
   "description": "Guided by experience, dedication, and a vision for positive change, our chairman leads the foundation with purpose and compassion.",
 
   "chairman": {
-    "role": "Chairman & Founder",
-    "name": "Mr. Alhaz Lacky Miah",
+    "role": "Chairman",
+    "name": "Shah Ahmed Madani",
     "quote": "Together, we can create opportunities, empower communities, and build a future where everyone has the chance to thrive.",
     "profileLabel": "The Chairman",
-    "position": "Chairman & Founder, The Jannath Foundation",
+    "position": "Chairman, The Jannath Foundation",
 
     "biography": {
-      "paragraph1": "Mr. Alhaz Lacky Miah is a dedicated community leader committed to creating meaningful opportunities and supporting sustainable development. Through his leadership and experience, he has helped guide the foundation toward initiatives focused on community empowerment, education, and social development.",
+      "paragraph1": "Shah Ahmed Madani is a dedicated community leader committed to creating meaningful opportunities and supporting sustainable development. Through his leadership and experience, he has helped guide the foundation toward initiatives focused on community empowerment, education, and social development.",
       "paragraph2": "His leadership is built on the principles of integrity, compassion, collaboration, and service. He believes that lasting change becomes possible when people come together with a shared vision and a commitment to helping others."
     },
 
@@ -23,7 +23,7 @@
       },
       "leadership": {
         "label": "Leadership",
-        "value": "Chairman & Founder"
+        "value": "Chairman"
       }
     },
 

@@ -174,22 +174,6 @@ export default function Hero() {
         <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-12 bg-gradient-to-l from-background to-transparent sm:w-32" />
 
         {/* Moving Track */}
-        <div className="hero-image-track flex w-max gap-3 sm:gap-4">
-          {infiniteImages.map((image, index) => (
-            <div
-              key={`${image.src}-${index}`}
-              className="relative h-16 w-24 shrink-0 overflow-hidden rounded-xl sm:h-24 sm:w-40"
-            >
-              <Image
-                src={image.src}
-                alt={t(image.altKey)}
-                fill
-                sizes="160px"
-                className="object-cover transition-transform duration-500 hover:scale-110"
-              />
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
