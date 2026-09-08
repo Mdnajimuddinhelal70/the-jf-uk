@@ -16,14 +16,14 @@ export default function FounderHero() {
           {/* Founder Image */}
           <div className="relative mx-auto w-full max-w-md">
             {/* Decorative Frame */}
-            <div className="absolute -left-4 -top-4 h-full w-full rounded-[2rem] border-2 border-primary/20" />
+            <div className="absolute h-full w-full rounded-[2rem] border-2 border-primary/20" />
 
             <div className="absolute -bottom-4 -right-4 h-24 w-24 rounded-full bg-primary/10 blur-2xl" />
 
             <div className="relative overflow-hidden rounded-[2rem] bg-base-200 shadow-2xl">
               <div className="relative aspect-[4/5] w-full">
                 <Image
-                  src="https://res.cloudinary.com/dpgjlcycl/image/upload/v1786803130/ChairmanImg_mlerq7.jpg"
+                  src="https://res.cloudinary.com/dpgjlcycl/image/upload/v1788885801/WhatsApp_Image_2026-09-08_at_10.42.49_PM_ncoiok.jpg"
                   alt={t("imageAlt")}
                   fill
                   priority
@@ -46,9 +46,6 @@ export default function FounderHero() {
           {/* Hero Content */}
           <div>
             {/* Badge */}
-            <span className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
-              {t("badge")}
-            </span>
 
             {/* Heading */}
             <h1 className="mt-5 text-4xl font-bold leading-tight text-base-content sm:text-5xl lg:text-6xl">

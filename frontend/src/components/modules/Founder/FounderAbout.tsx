@@ -71,7 +71,7 @@ export default function FounderAbout() {
               </h3>
 
               <p className="mt-3 text-sm leading-7 text-base-content/65 sm:text-base">
-                {t("serviceDescription")}
+                {t("founderMessage")}
               </p>
             </div>
           </div>
@@ -79,13 +79,7 @@ export default function FounderAbout() {
           {/* Founder Story */}
           <div className="mt-8 rounded-3xl border border-base-content/10 bg-base-100 p-7 shadow-sm sm:p-9 lg:p-10">
             <div className="max-w-4xl">
-              <h3 className="text-2xl font-bold text-base-content sm:text-3xl">
-                {t("storyTitle")}
-              </h3>
-
               <div className="mt-6 space-y-5 text-base leading-8 text-base-content/70">
-                <p>{t("paragraph1")}</p>
-
                 <p>{t("paragraph2")}</p>
 
                 <p>{t("paragraph3")}</p>

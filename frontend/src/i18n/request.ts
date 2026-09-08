@@ -87,6 +87,9 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const founderAboutPageMessages = (
     await import(`../messages/${locale}/founder/founderAbout.json`)
   ).default;
+  const founderGalleryMessages = (
+    await import(`../messages/${locale}/founder/founderGallery.json`)
+  ).default;
 
   return {
     locale,
@@ -142,6 +145,9 @@ export default getRequestConfig(async ({ requestLocale }) => {
       },
       FounderAboutPage: {
         About: founderAboutPageMessages,
+      },
+      FounderGallery: {
+        Gallery: founderGalleryMessages,
       },
     },
   };
