@@ -1,4 +1,4 @@
-import { ArrowRight, CalendarDays, Heart, MapPin, Users } from "lucide-react";
+import { ArrowRight, CalendarDays, MapPin, Users } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
@@ -177,14 +177,14 @@ export default function CurrentCampaigns() {
                   </div>
 
                   {/* CTA */}
-                  <Link
+                  {/* <Link
                     href={`/campaigns/${campaign.id}`}
                     className="mt-6 inline-flex h-10 w-full items-center justify-center gap-2 rounded-full bg-primary px-5 text-sm font-medium text-primary-foreground shadow-xs transition-all hover:bg-primary/90"
                   >
                     <Heart className="h-4 w-4" />
 
                     {t("supportThisCampaign")}
-                  </Link>
+                  </Link> */}
                 </CardContent>
               </Card>
             );
@@ -193,14 +193,14 @@ export default function CurrentCampaigns() {
 
         {/* Bottom CTA */}
         <div className="mt-10 text-center">
-          <Link
+          {/* <Link
             href="/campaigns"
             className="inline-flex items-center gap-2 rounded-full border px-6 py-2.5 text-sm font-medium transition-colors hover:bg-muted"
           >
             {t("exploreAllCampaigns")}
 
             <ArrowRight className="h-4 w-4" />
-          </Link>
+          </Link> */}
         </div>
       </div>
     </section>

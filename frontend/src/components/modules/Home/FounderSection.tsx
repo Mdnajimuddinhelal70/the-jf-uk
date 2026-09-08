@@ -93,7 +93,7 @@ export default function FounderSection() {
             {/* CTA */}
             <div className="mt-9">
               <Link
-                href="/about"
+                href="/about/founder"
                 className="group inline-flex items-center gap-2 rounded-full bg-green-500 px-6 py-3.5 text-sm font-semibold text-primar-content shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
                 {t("button")}

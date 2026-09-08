@@ -81,6 +81,12 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const founderSectionMessages = (
     await import(`../messages/${locale}/home/founder.json`)
   ).default;
+  const founderPageMessages = (
+    await import(`../messages/${locale}/founder/founder.json`)
+  ).default;
+  const founderAboutPageMessages = (
+    await import(`../messages/${locale}/founder/founderAbout.json`)
+  ).default;
 
   return {
     locale,
@@ -130,6 +136,12 @@ export default getRequestConfig(async ({ requestLocale }) => {
       },
       FounderSection: {
         Section: founderSectionMessages,
+      },
+      FounderPage: {
+        Hero: founderPageMessages,
+      },
+      FounderAboutPage: {
+        About: founderAboutPageMessages,
       },
     },
   };
