@@ -135,7 +135,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
       },
       Donate: {
         ...baseMessages.Donate,
-        Donate: donateSectionMessages,
+        ...donateSectionMessages,
       },
       FounderSection: {
         Section: founderSectionMessages,
