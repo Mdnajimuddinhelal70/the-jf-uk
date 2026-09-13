@@ -71,12 +71,12 @@ const HumanitarianActivities = () => {
                   </div>
 
                   {/* Title */}
-                  <h3 className="mb-4 text-2xl sm:text-sm font-bold">
+                  <h3 className="mb-4 text-xl sm:text-sm font-bold">
                     {activity.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="mb-6 leading-7 text-2xl">
+                  <p className="mb-6 leading-7 text-lg">
                     {activity.description}
                   </p>
 

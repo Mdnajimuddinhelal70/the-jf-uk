@@ -12,7 +12,7 @@ export default function FounderHero() {
       <div className="pointer-events-none absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-secondary/10 blur-3xl" />
 
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+        <div className="mx-auto grid max-w-6xl items-start gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
           {/* Founder Image */}
           <div className="relative mx-auto w-full max-w-md">
             {/* Decorative Frame */}

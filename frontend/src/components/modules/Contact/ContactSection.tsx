@@ -22,12 +22,12 @@ const contactInfo = [
   {
     icon: Phone,
     key: "phone",
-    href: "tel:+8801000000000",
+    href: "tel:+447931791007",
   },
   {
     icon: Mail,
     key: "email",
-    href: "mailto:info@example.org",
+    href: "mailto:lakimiah02@gmail.com",
   },
 ];
 
