@@ -12,15 +12,8 @@ export default function Home() {
       <Hero />
       <FounderSection />
       <AboutFoundation />
-      {/* <OurMission /> */}
       <CurrentCampaigns />
-      {/* <FeaturedProjects /> */}
       <HumanitarianActivities />
-      {/* <ImpactStatistics /> */}
-      {/* <UpcomingEvents /> */}
-      {/* <LatestNews /> */}
-      {/* <PartnersSupporters /> */}
-      {/* <ActionCTA /> */}
     </main>
   );
 }
