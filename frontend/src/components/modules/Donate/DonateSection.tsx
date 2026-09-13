@@ -20,7 +20,7 @@ export default function DonateSection() {
   const [copied, setCopied] = useState<string | null>(null);
 
   // Donation details
-  const bkashNumber = "01XXXXXXXXX";
+  const bkashNumber = "+447931791007";
 
   const bankAccountName = "THE JANNATH FOUNDATION UK";
   const bankName = "The Royal Bank of Scotland Plc";
@@ -74,9 +74,7 @@ export default function DonateSection() {
           </p>
         </div>
 
-    
         <div className="mx-auto mt-14 grid max-w-5xl gap-7 lg:grid-cols-2">
-     
           <Card className="group relative overflow-hidden border-0 bg-background shadow-lg ring-1 ring-border/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
             {/* Top Gradient */}
             <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-primary/40 via-primary to-primary/40" />
@@ -114,7 +112,7 @@ export default function DonateSection() {
                   {t("bkash.numberLabel")}
                 </p>
 
-                <div className="mt-3 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                   <p className="break-all text-2xl font-bold tracking-wide sm:text-3xl">
                     {bkashNumber}
                   </p>
@@ -214,7 +212,7 @@ export default function DonateSection() {
                 </div>
 
                 {/* Account Number + Sort Code */}
-                <div className="grid gap-4 sm:grid-cols-2">
+                <div className="grid gap-2 sm:grid-cols-2">
                   {/* Account Number */}
                   <div className="rounded-xl border bg-muted/30 p-4">
                     <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
