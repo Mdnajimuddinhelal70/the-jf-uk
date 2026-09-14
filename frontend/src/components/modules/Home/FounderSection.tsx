@@ -39,7 +39,7 @@ export default function FounderSection() {
             <div className="relative overflow-hidden rounded-3xl">
               <div className="relative aspect-[4/5] w-full">
                 <Image
-                  src="https://res.cloudinary.com/dpgjlcycl/image/upload/v1786803130/ChairmanImg_mlerq7.jpg"
+                  src="https://res.cloudinary.com/dpgjlcycl/image/upload/v1789403028/Gemini_Generated_Image_eowd17eowd17eowd_ayfkkq.jpg"
                   alt={t("imageAlt")}
                   className="absolute inset-0 h-full w-full object-cover object-top"
                   width={800}
