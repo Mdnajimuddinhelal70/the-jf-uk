@@ -25,7 +25,7 @@ export default function DesktopActions({
 
       {/* Donate */}
       <Link href={donateHref}>
-        <Button className="rounded-full px-6 shadow-sm">
+        <Button className="rounded-full bg-orange-500 hover:bg-orange-600 px-6 shadow-sm">
           <Heart className="mr-2 size-4 fill-current" />
           {donateText}
         </Button>

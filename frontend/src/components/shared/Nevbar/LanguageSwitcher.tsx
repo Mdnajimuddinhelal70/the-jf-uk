@@ -18,7 +18,7 @@ export default function LanguageSwitcher({
         href={switchLocale("bn")}
         className={`rounded-full px-3 py-1.5 text-xs font-semibold transition-all ${
           locale === "bn"
-            ? "bg-primary text-primary-foreground shadow-sm"
+            ? "bg-orange-500 text-primary-foreground shadow-sm"
             : "text-white/70 hover:bg-white/10 hover:text-white"
         }`}
       >
@@ -30,7 +30,7 @@ export default function LanguageSwitcher({
         href={switchLocale("en")}
         className={`rounded-full px-3 py-1.5 text-xs font-semibold transition-all ${
           locale === "en"
-            ? "bg-primary text-primary-foreground shadow-sm"
+            ? "bg-orange-500 text-primary-foreground shadow-sm"
             : "text-white/70 hover:bg-white/10 hover:text-white"
         }`}
       >

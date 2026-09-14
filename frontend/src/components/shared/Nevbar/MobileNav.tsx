@@ -11,6 +11,7 @@ import {
 
 import { Button } from "@/components/ui/button";
 
+import Image from "next/image";
 import LanguageSwitcher, { type Locale } from "./LanguageSwitcher";
 
 interface NavItem {
@@ -57,8 +58,14 @@ export default function MobileNav({
           <SheetHeader className="border-b border-white/10 pb-5">
             <SheetTitle className="flex items-center gap-3 text-left text-white">
               {/* Logo Icon */}
-              <div className="flex size-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                <Heart className="size-5 fill-current" />
+              <div className="flex h-11 w-11 items-center justify-center rounded-lg text-primary-foreground">
+                <Image
+                  src="https://res.cloudinary.com/dpgjlcycl/image/upload/v1789405196/Foundation_logo_jovtfz.jpg"
+                  alt="Logo"
+                  width={60}
+                  height={60}
+                  className="h-8 w-8 rounded-lg object-contain object-left"
+                />
               </div>
 
               {/* Logo Text */}
@@ -67,7 +74,7 @@ export default function MobileNav({
                   The Jannath
                 </div>
 
-                <div className="text-[9px] font-semibold tracking-[0.2em] text-primary">
+                <div className="text-[9px] font-semibold text-primary">
                   FOUNDATION UK
                 </div>
               </div>
@@ -88,7 +95,7 @@ export default function MobileNav({
                 href={getLocalizedHref(item.href)}
                 className={`rounded-lg px-4 py-3 text-sm font-medium transition-all ${
                   isActive(item.href)
-                    ? "bg-primary text-primary-foreground shadow-sm"
+                    ? "bg-orange-400 text-primary-foreground shadow-sm"
                     : "text-white/80 hover:bg-white/10 hover:text-white"
                 }`}
               >
