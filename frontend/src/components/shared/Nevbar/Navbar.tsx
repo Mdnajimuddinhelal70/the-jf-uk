@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 
 import Image from "next/image";
-import logo from "../../../../public/icons/logo2.png";
+import logo from "../../../../public/icons/Foundation logo.jpg";
 
 import Link from "next/link";
 import DesktopActions from "./DesktopActions";
@@ -100,7 +100,7 @@ export default function Navbar() {
               src={logo}
               alt="The Jannath Foundation UK"
               priority
-              className="h-full w-auto object-contain object-left"
+              className="h-full rounded-lg w-auto object-contain object-left"
             />
           </div>
         </Link>

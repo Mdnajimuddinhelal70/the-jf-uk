@@ -54,9 +54,9 @@ export default function Footer() {
           {/* Brand */}
           <div className="max-w-sm">
             <Link href="/" className="inline-flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl text-primary-foreground">
+              <div className="flex h-11 w-11 items-center justify-center rounded-lg text-primary-foreground">
                 <Image
-                  src="https://res.cloudinary.com/dpgjlcycl/image/upload/v1788540660/small_logo_v3wstl.png"
+                  src="https://res.cloudinary.com/dpgjlcycl/image/upload/v1789405196/Foundation_logo_jovtfz.jpg"
                   alt="Logo"
                   width={60}
                   height={60}
@@ -73,7 +73,7 @@ export default function Footer() {
             <p className="mt-6 text-sm leading-7">
               Together, we can bring hope, support those in need, and build a
               better future.
-              <span className="block mt-2 text-stone-50">
+              <span className="block mt-2 text-black">
                 একসাথে আমরা আশা ছড়িয়ে দিতে, অসহায় মানুষের পাশে দাঁড়াতে এবং একটি
                 সুন্দর ভবিষ্যৎ গড়তে পারি।
               </span>
