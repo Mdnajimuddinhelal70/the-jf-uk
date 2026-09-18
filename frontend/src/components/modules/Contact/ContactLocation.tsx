@@ -31,7 +31,7 @@ export default function ContactLocation() {
         {/* Location Content */}
         <div className="mt-12 grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
           {/* Location Card */}
-          <Card className="bg-green-600 border-border/60 shadow-sm">
+          <Card className="bg-orange-300 border-border/60 shadow-sm">
             <CardContent className="p-7 sm:p-9">
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
                 <MapPin className="h-7 w-7 text-primary" />
@@ -57,7 +57,7 @@ export default function ContactLocation() {
                 href={GOOGLE_MAPS_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-7 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-md"
+                className="mt-7 inline-flex items-center gap-2 rounded-full bg-orange-600 px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all hover:bg-orange-700 hover:shadow-md"
               >
                 {t("directions")}
                 <ExternalLink className="h-4 w-4" />

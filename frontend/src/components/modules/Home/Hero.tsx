@@ -67,11 +67,11 @@ export default function Hero() {
             </p>
 
             {/* Buttons */}
-            <div className="mt-6 flex flex-col gap-3 sm:mt-7 sm:flex-row sm:items-center">
+            <div className="mt-6 flex flex-col gap-3 sm:mt-7 sm:flex-row sm:items-center ">
               <Link href={donateHref} className="w-full sm:w-auto">
                 <Button
                   size="lg"
-                  className="h-11 w-full rounded-full px-6 sm:h-12 sm:w-auto sm:px-7"
+                  className="h-11 w-full rounded-full px-6 sm:h-12 sm:w-auto sm:px-7 bg-orange-600 hover:bg-orange-700"
                 >
                   <Heart className="mr-2 size-4 fill-current" />
                   {t("donate")}

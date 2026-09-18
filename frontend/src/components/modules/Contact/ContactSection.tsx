@@ -35,22 +35,22 @@ const socialLinks = [
   {
     icon: FaFacebookF,
     key: "facebook",
-    href: "#",
+    href: "https://web.facebook.com/lucky.miah.35",
   },
   {
     icon: FaInstagram,
     key: "instagram",
-    href: "#",
+    href: "https://www.instagram.com/lucky_miah",
   },
   {
     icon: FaLinkedinIn,
     key: "linkedin",
-    href: "#",
+    href: "https://www.linkedin.com/in/lucky-miah",
   },
   {
     icon: FaTwitter,
     key: "twitter",
-    href: "#",
+    href: "https://twitter.com/lucky_miah",
   },
 ];
 
@@ -62,7 +62,7 @@ export default function AboutContactSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-10">
           {/* Contact Information */}
-          <Card className="bg-green-400 overflow-hidden border-border/60 shadow-sm">
+          <Card className="bg-orange-200 overflow-hidden border-border/60 shadow-sm">
             <CardContent className="p-7 sm:p-9">
               {/* Eyebrow */}
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
@@ -135,7 +135,7 @@ export default function AboutContactSection() {
           </Card>
 
           {/* Contact Form */}
-          <Card className="bg-green-400 border-border/60 shadow-sm">
+          <Card className="bg-orange-200 border-border/60 shadow-sm">
             <CardContent className="p-7 sm:p-9">
               {/* Form Header */}
               <div>
@@ -235,7 +235,7 @@ export default function AboutContactSection() {
                 {/* Submit */}
                 <button
                   type="submit"
-                  className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-md bg-primary px-6 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-md sm:w-auto"
+                  className="inline-flex h-11 w-full bg-orange-600 items-center justify-center gap-2 rounded-md px-6 text-sm font-semibold text-primary-foreground transition-all hover:bg-orange-700 hover:shadow-md sm:w-auto"
                 >
                   {t("form.submit")}
 

@@ -25,22 +25,22 @@ const supportLinks = [
 const socialLinks = [
   {
     label: "Facebook",
-    href: "#",
+    href: "https://web.facebook.com/lucky.miah.35",
     icon: FaFacebookF,
   },
   {
     label: "Twitter",
-    href: "#",
+    href: "https://twitter.com/lucky_miah",
     icon: FaTwitter,
   },
   {
     label: "Instagram",
-    href: "#",
+    href: "https://www.instagram.com/lucky_miah",
     icon: FaInstagram,
   },
   {
     label: "LinkedIn",
-    href: "#",
+    href: "https://www.linkedin.com/in/lucky-miah",
     icon: FaLinkedinIn,
   },
 ];
@@ -185,10 +185,10 @@ export default function Footer() {
                 <Mail className="h-4 w-4 shrink-0 text-primary" />
 
                 <Link
-                  href="mailto:info@example.org"
+                  href="mailto:lakimiah02@gmail.com"
                   className="transition-colors hover:text-primary"
                 >
-                  info@example.org
+                  lakimiah02@gmail.com
                 </Link>
               </div>
             </div>

@@ -116,8 +116,8 @@ export default function MobileNav({
                     href={getLocalizedHref(item.href)}
                     className={`block rounded-lg px-4 py-3 text-sm transition-all ${
                       isActive(item.href)
-                        ? "bg-primary/15 font-medium text-primary"
-                        : "text-white/70 hover:bg-white/10 hover:text-white"
+                        ? "bg-orange-400 text-primary-foreground shadow-sm"
+                        : "text-white/80 hover:bg-white/10 hover:text-white"
                     }`}
                   >
                     {t(item.key)}
