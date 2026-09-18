@@ -18,8 +18,6 @@ export default function DonateSection() {
   const t = useTranslations("Donate.Donate");
 
   const [copied, setCopied] = useState<string | null>(null);
-
-  // Donation details
   const bkashNumber = "+447931791007";
 
   const bankAccountName = "THE JANNATH FOUNDATION UK";
@@ -120,7 +118,7 @@ export default function DonateSection() {
                   <button
                     type="button"
                     onClick={() => handleCopy(bkashNumber, "bkash")}
-                    className="inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground shadow-sm transition-all hover:bg-primary/90 hover:shadow-md active:scale-95"
+                    className="inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-xl bg-orange-600 px-4 text-sm font-semibold text-primary-foreground shadow-sm transition-all hover:bg-orange-700 hover:shadow-md active:scale-95"
                     aria-label={t("copy")}
                   >
                     {copied === "bkash" ? (
@@ -266,9 +264,9 @@ export default function DonateSection() {
         <div className="mx-auto mt-10 max-w-5xl">
           <div className="relative overflow-hidden rounded-2xl border bg-muted/30 px-6 py-7 text-center sm:px-10">
             {/* Decorative Background */}
-            <div className="pointer-events-none absolute left-1/2 top-0 h-32 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-3xl" />
+            <div className="pointer-events-none absolute left-1/2 top-0 h-32 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-600 blur-3xl" />
 
-            <Heart className="relative mx-auto h-6 w-6 fill-primary text-primary" />
+            <Heart className="relative mx-auto h-6 w-6 fill-orange-600 text-orange-600" />
 
             <p className="relative mx-auto mt-3 max-w-3xl text-sm leading-6 text-muted-foreground md:text-base">
               {t("bottomNote")}

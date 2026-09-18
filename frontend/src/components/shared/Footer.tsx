@@ -89,7 +89,7 @@ export default function Footer() {
                     key={social.label}
                     href={social.href}
                     aria-label={social.label}
-                    className="flex h-9 w-9 items-center justify-center rounded-full border transition-all duration-200 hover:border-primary hover:bg-primary hover:text-primary-foreground"
+                    className="flex h-9 w-9 items-center text-orange-600 justify-center rounded-full border transition-all duration-200 hover:border-orange-600 hover:bg-orange-600 hover:text-primary-foreground"
                   >
                     <Icon className="h-4 w-4" />
                   </Link>
@@ -155,7 +155,7 @@ export default function Footer() {
                 <button
                   type="submit"
                   aria-label="Subscribe to newsletter"
-                  className="flex h-10 w-10 shrink-0 items-center justify-center bg-primary text-primary-foreground transition-colors hover:bg-primary/90"
+                  className="flex h-10 w-10 shrink-0 items-center justify-center bg-orange-600 text-primary-foreground transition-colors hover:bg-orange-700"
                 >
                   <ArrowRight className="h-4 w-4" />
                 </button>

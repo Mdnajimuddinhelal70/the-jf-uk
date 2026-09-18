@@ -8,21 +8,6 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-const images = [
-  {
-    src: "https://res.cloudinary.com/dpgjlcycl/image/upload/v1788499143/WhatsApp_Image_2026-09-04_at_11.11.28_AM_pmlkke.jpg",
-    altKey: "imageAlt1",
-  },
-  {
-    src: "https://res.cloudinary.com/dpgjlcycl/image/upload/v1787589502/WhatsApp_Image_2026-08-24_at_7.54.01_PM_alq2tu.jpg",
-    altKey: "imageAlt2",
-  },
-  {
-    src: "https://res.cloudinary.com/dpgjlcycl/image/upload/v1787583557/WhatsApp_Image_2026-08-24_at_8.11.46_PM_txd8qu.jpg",
-    altKey: "imageAlt3",
-  },
-];
-
 export default function Hero() {
   const t = useTranslations("Home.Hero");
   const locale = useLocale();
@@ -131,12 +116,12 @@ export default function Hero() {
             <div className="relative overflow-hidden rounded-[1.5rem] border bg-background p-1.5 shadow-sm sm:rounded-[1.8rem] sm:p-2">
               <div className="relative h-[300px] overflow-hidden rounded-[1.15rem] sm:h-[400px] sm:rounded-[1.4rem] md:h-[450px] lg:h-[500px]">
                 <Image
-                  src={images[2].src}
-                  alt={t(images[2].altKey)}
+                  src="https://res.cloudinary.com/dpgjlcycl/image/upload/v1789741687/Gemini_Generated_Image_d9s8cvd9s8cvd9s8_lnrywa.jpg"
+                  alt="Hero Image"
                   fill
                   priority
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 55vw"
+                  className="object-cover object-center"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 55vw"
                 />
 
                 {/* Gradient */}
