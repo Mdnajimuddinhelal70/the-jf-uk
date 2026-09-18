@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+"use client";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { useTranslations } from "next-intl";
 import {
@@ -12,6 +14,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import Link from "next/link";
+import { useState } from "react";
 
 const contactInfo = [
   {
@@ -56,6 +59,10 @@ const socialLinks = [
 
 export default function AboutContactSection() {
   const t = useTranslations("Contact.ContactSection");
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
 
   return (
     <section className="bg-background py-20 sm:py-24 lg:py-28">
@@ -135,7 +142,8 @@ export default function AboutContactSection() {
           </Card>
 
           {/* Contact Form */}
-          <Card className="bg-orange-200 border-border/60 shadow-sm">
+          {/* Contact Form */}
+          <Card className="border-border/60 bg-orange-200 shadow-sm">
             <CardContent className="p-7 sm:p-9">
               {/* Form Header */}
               <div>
@@ -152,8 +160,65 @@ export default function AboutContactSection() {
                 </p>
               </div>
 
+              {/* Success Message */}
+              {success && (
+                <div className="mt-6 rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-sm font-medium text-green-700">
+                  Your message has been sent successfully. Thank you for
+                  contacting us.
+                </div>
+              )}
+
+              {/* Error Message */}
+              {error && (
+                <div className="mt-6 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
+                  Something went wrong. Please try again.
+                </div>
+              )}
+
               {/* Form */}
-              <form className="mt-8 space-y-6">
+              <form
+                className="mt-8 space-y-6"
+                onSubmit={async (event) => {
+                  event.preventDefault();
+
+                  setIsSubmitting(true);
+                  setSuccess(false);
+                  setError(false);
+
+                  const form = event.currentTarget;
+                  const formData = new FormData(form);
+
+                  try {
+                    const response = await fetch(
+                      "https://api.web3forms.com/submit",
+                      {
+                        method: "POST",
+                        body: formData,
+                      },
+                    );
+
+                    const result = await response.json();
+
+                    if (result.success) {
+                      form.reset();
+                      setSuccess(true);
+                    } else {
+                      setError(true);
+                    }
+                  } catch (err) {
+                    setError(true);
+                  } finally {
+                    setIsSubmitting(false);
+                  }
+                }}
+              >
+                {/* Web3Forms Access Key */}
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value="a3d445ee-a3af-430f-8ffd-a46080cd5eb3"
+                />
+
                 {/* Name + Email */}
                 <div className="grid gap-5 sm:grid-cols-2">
                   {/* Name */}
@@ -166,6 +231,7 @@ export default function AboutContactSection() {
                       type="text"
                       placeholder={t("form.fields.name.placeholder")}
                       className="h-11"
+                      required
                     />
                   </div>
 
@@ -181,6 +247,7 @@ export default function AboutContactSection() {
                       type="email"
                       placeholder={t("form.fields.email.placeholder")}
                       className="h-11"
+                      required
                     />
                   </div>
                 </div>
@@ -214,6 +281,7 @@ export default function AboutContactSection() {
                       type="text"
                       placeholder={t("form.fields.subject.placeholder")}
                       className="h-11"
+                      required
                     />
                   </div>
                 </div>
@@ -229,15 +297,17 @@ export default function AboutContactSection() {
                     name="message"
                     placeholder={t("form.fields.message.placeholder")}
                     className="min-h-[150px] resize-none"
+                    required
                   />
                 </div>
 
                 {/* Submit */}
                 <button
                   type="submit"
-                  className="inline-flex h-11 w-full bg-orange-600 items-center justify-center gap-2 rounded-md px-6 text-sm font-semibold text-primary-foreground transition-all hover:bg-orange-700 hover:shadow-md sm:w-auto"
+                  disabled={isSubmitting}
+                  className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-md bg-orange-600 px-6 text-sm font-semibold text-white transition-all hover:bg-orange-700 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
                 >
-                  {t("form.submit")}
+                  {isSubmitting ? "Sending..." : t("form.submit")}
 
                   <Send className="h-4 w-4" />
                 </button>
