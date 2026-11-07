@@ -1,4 +1,5 @@
-import { Heart, Menu } from "lucide-react";
+import { ArrowUpRight, Heart, Menu } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 import {
@@ -9,9 +10,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-import { Button } from "@/components/ui/button";
-
-import Image from "next/image";
+import logo from "../../../../public/icons/Foundation logo.jpg";
 import LanguageSwitcher, { type Locale } from "./LanguageSwitcher";
 
 interface NavItem {
@@ -40,100 +39,126 @@ export default function MobileNav({
 }: MobileNavProps) {
   return (
     <div className="lg:hidden">
-      {/* Mobile Menu Button */}
       <Sheet>
+        {/* Menu Trigger */}
         <SheetTrigger
-          className="inline-flex size-10 items-center justify-center rounded-md border border-white/15 bg-white/10 text-white transition-all hover:bg-white hover:text-blue-800"
+          className="inline-flex size-11 items-center justify-center rounded-full border border-emerald-100 bg-emerald-50 text-emerald-800 transition-all duration-300 hover:bg-emerald-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
           aria-label="Open navigation menu"
         >
-          <Menu className="size-6" />
+          <Menu className="size-5" />
         </SheetTrigger>
 
-        {/* Mobile Sheet */}
+        {/* Mobile Navigation Panel */}
         <SheetContent
           side="right"
-          className="w-[85%] border-l border-white/10 bg-green-800 text-white sm:max-w-sm"
+          className="w-[88%] border-l border-emerald-100 bg-[#fffefa] p-0 text-slate-800 sm:max-w-sm"
         >
-          {/* Mobile Header */}
-          <SheetHeader className="border-b border-white/10 pb-5">
-            <SheetTitle className="flex items-center gap-3 text-left text-white">
-              {/* Logo Icon */}
-              <div className="flex h-11 w-11 items-center justify-center rounded-lg text-primary-foreground">
+          {/* Header */}
+          <SheetHeader className="border-b border-slate-100 px-6 py-6">
+            <SheetTitle className="flex items-center gap-3 text-left">
+              <div className="flex size-12 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-slate-100">
                 <Image
-                  src="https://res.cloudinary.com/dpgjlcycl/image/upload/v1789405196/Foundation_logo_jovtfz.jpg"
-                  alt="Logo"
-                  width={60}
-                  height={60}
-                  className="h-8 w-8 rounded-lg object-contain object-left"
+                  src={logo}
+                  alt="The Jannath Foundation UK"
+                  width={80}
+                  height={80}
+                  className="size-full object-contain"
                 />
               </div>
 
-              {/* Logo Text */}
               <div>
-                <div className="text-base font-bold text-white">
+                <span className="block text-base font-bold tracking-tight text-slate-900">
                   The Jannath
-                </div>
-
-                <div className="text-[9px] font-semibold text-primary">
+                </span>
+                <span className="mt-0.5 block text-[10px] font-bold tracking-[0.2em] text-emerald-700">
                   FOUNDATION UK
-                </div>
+                </span>
               </div>
             </SheetTitle>
           </SheetHeader>
 
-          {/* Mobile Navigation */}
-          <div className="mt-6 flex flex-col gap-2">
-            {/* Language Switcher */}
-            <div className="mb-3 flex justify-start px-2">
+          {/* Navigation Content */}
+          <div className="flex h-[calc(100dvh-105px)] flex-col overflow-y-auto px-5 py-6">
+            {/* Language */}
+            <div className="mb-7 rounded-xl bg-emerald-50/70 p-3">
+              <p className="mb-2 px-1 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-500">
+                Language
+              </p>
+
               <LanguageSwitcher locale={locale} switchLocale={switchLocale} />
             </div>
 
             {/* Main Navigation */}
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={getLocalizedHref(item.href)}
-                className={`rounded-lg px-4 py-3 text-sm font-medium transition-all ${
-                  isActive(item.href)
-                    ? "bg-orange-400 text-primary-foreground shadow-sm"
-                    : "text-white/80 hover:bg-white/10 hover:text-white"
-                }`}
-              >
-                {t(item.key)}
-              </Link>
-            ))}
+            <div className="space-y-1">
+              <p className="mb-3 px-3 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">
+                Menu
+              </p>
 
-            {/* Our Work */}
-            <div className="mt-2">
-              <div className="px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white/50">
-                {t("ourWork")}
-              </div>
+              {navItems.map((item) => {
+                const active = isActive(item.href);
 
-              <div className="ml-2 border-l border-white/15 pl-2">
-                {workItems.map((item) => (
+                return (
                   <Link
                     key={item.href}
                     href={getLocalizedHref(item.href)}
-                    className={`block rounded-lg px-4 py-3 text-sm transition-all ${
-                      isActive(item.href)
-                        ? "bg-orange-400 text-primary-foreground shadow-sm"
-                        : "text-white/80 hover:bg-white/10 hover:text-white"
+                    className={`flex min-h-12 items-center justify-between rounded-xl px-4 text-sm font-semibold transition-all duration-200 ${
+                      active
+                        ? "bg-emerald-700 text-white shadow-md shadow-emerald-900/10"
+                        : "text-slate-700 hover:bg-emerald-50 hover:text-emerald-800"
                     }`}
                   >
                     {t(item.key)}
+
+                    {active && <ArrowUpRight className="size-4" />}
                   </Link>
-                ))}
+                );
+              })}
+            </div>
+
+            {/* Our Work */}
+            <div className="mt-7">
+              <p className="mb-3 px-3 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">
+                {t("ourWork")}
+              </p>
+
+              <div className="space-y-1 border-l-2 border-emerald-100 pl-3">
+                {workItems.map((item) => {
+                  const active = isActive(item.href);
+
+                  return (
+                    <Link
+                      key={item.href}
+                      href={getLocalizedHref(item.href)}
+                      className={`flex min-h-11 items-center justify-between rounded-lg px-3 text-sm font-medium transition-all duration-200 ${
+                        active
+                          ? "bg-emerald-50 text-emerald-800"
+                          : "text-slate-600 hover:bg-emerald-50 hover:text-emerald-800"
+                      }`}
+                    >
+                      {t(item.key)}
+
+                      {active && (
+                        <span className="size-1.5 rounded-full bg-emerald-600" />
+                      )}
+                    </Link>
+                  );
+                })}
               </div>
             </div>
 
             {/* Donate */}
-            <div className="mt-6 border-t border-white/10 pt-6">
-              <Link href={getLocalizedHref("/donate")} className="block">
-                <Button size="lg" className="w-full rounded-full">
-                  <Heart className="mr-2 size-4 fill-current" />
-                  {t("donate")}
-                </Button>
+            <div className="mt-auto border-t border-slate-100 pt-6">
+              <Link
+                href={getLocalizedHref("/donate")}
+                className="group flex h-12 w-full items-center justify-center gap-2 rounded-full bg-emerald-700 px-6 text-sm font-bold text-white shadow-lg shadow-emerald-900/15 transition-all duration-300 hover:bg-emerald-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
+              >
+                <Heart className="size-4 fill-current transition-transform duration-300 group-hover:scale-110" />
+                {t("donate")}
               </Link>
+
+              <p className="mt-4 text-center text-xs text-slate-400">
+                Together, we can make a difference.
+              </p>
             </div>
           </div>
         </SheetContent>

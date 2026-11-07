@@ -1,70 +1,207 @@
 "use client";
 
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import type { Swiper as SwiperType } from "swiper";
+import { Autoplay, EffectFade, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Autoplay, FreeMode, Navigation, Thumbs } from "swiper/modules";
-
-import Image from "next/image";
-
 import "swiper/css";
-import "swiper/css/free-mode";
+import "swiper/css/effect-fade";
 import "swiper/css/navigation";
-import "swiper/css/thumbs";
 
-const images = [
-  "https://res.cloudinary.com/dpgjlcycl/image/upload/v1788504409/Gemini_Generated_Image_5i691h5i691h5i69_ojatke.jpg",
-  "https://res.cloudinary.com/dpgjlcycl/image/upload/v1787664089/jf-uk-banner_nuv3o8.jpg",
-  "https://res.cloudinary.com/dpgjlcycl/image/upload/v1788504694/Gemini_Generated_Image_p2bk5tp2bk5tp2bk_gcez50.jpg",
+type BannerSlide = {
+  image: string;
+  eyebrow: string;
+  title: string;
+  highlight: string;
+  subtitle: string;
+  ctaLabel: string;
+  ctaHref: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+};
+
+const slides: BannerSlide[] = [
+  {
+    image:
+      "https://res.cloudinary.com/dpgjlcycl/image/upload/v1788504409/Gemini_Generated_Image_5i691h5i691h5i69_ojatke.jpg",
+    eyebrow: "The Jannath Foundation UK",
+    title: "Serving Humanity,",
+    highlight: "Building Futures",
+    subtitle:
+      "Empowering orphans, students and communities through education, care and compassion.",
+    ctaLabel: "Donate Now",
+    ctaHref: "/donate",
+    secondaryLabel: "Learn More",
+    secondaryHref: "/about",
+  },
+  {
+    image:
+      "https://res.cloudinary.com/dpgjlcycl/image/upload/v1787664089/jf-uk-banner_nuv3o8.jpg",
+    eyebrow: "Our Mission",
+    title: "Every Child Deserves",
+    highlight: "a Bright Tomorrow",
+    subtitle:
+      "Free education, meals and facilities for orphans — supported by kind hearts like yours.",
+    ctaLabel: "Our Projects",
+    ctaHref: "/projects",
+    secondaryLabel: "Learn More",
+    secondaryHref: "/about",
+  },
+  {
+    image:
+      "https://res.cloudinary.com/dpgjlcycl/image/upload/v1788504694/Gemini_Generated_Image_p2bk5tp2bk5tp2bk_gcez50.jpg",
+    eyebrow: "Together We Can",
+    title: "Your Kindness",
+    highlight: "Changes Lives",
+    subtitle:
+      "Join hands with us to bring hope, dignity and opportunity to those who need it most.",
+    ctaLabel: "Get Involved",
+    ctaHref: "/contact",
+    secondaryLabel: "Learn More",
+    secondaryHref: "/about",
+  },
 ];
 
+const stats = [
+  { value: "10K+", label: "Students Supported" },
+  { value: "500+", label: "Orphans Cared" },
+  { value: "15+", label: "Years of Service" },
+];
+
+// Shared primary button design
+const primaryButtonClass =
+  "group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-emerald-700 px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-950/20 transition-all duration-300 hover:-translate-y-1 hover:bg-emerald-800 hover:shadow-xl hover:shadow-emerald-950/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950";
+
 export default function BannerSwiper() {
-  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
 
   return (
-    <section className="relative w-full overflow-hidden">
+    <section
+      aria-label="The Jannath Foundation UK introduction"
+      className="relative isolate w-full overflow-hidden bg-stone-950"
+    >
       <Swiper
-        loop={true}
-        speed={500}
-        spaceBetween={0}
-        slidesPerView={1}
+        loop
+        speed={1000}
+        effect="fade"
+        fadeEffect={{ crossFade: true }}
         autoplay={{
-          delay: 5000,
+          delay: 7000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
         }}
-        navigation={true}
-        thumbs={{
-          swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
+        navigation={{
+          prevEl: ".banner-prev",
+          nextEl: ".banner-next",
         }}
-        modules={[Autoplay, Navigation, Thumbs, FreeMode]}
-        className="banner-main h-[260px] w-full sm:h-[420px] md:h-[550px] lg:h-[650px]"
+        onSwiper={setSwiperInstance}
+        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+        modules={[Autoplay, Navigation, EffectFade]}
+        className="banner-main h-[620px] w-full sm:h-[680px] md:h-[740px] lg:h-[800px]"
       >
-        {images.map((image, index) => (
-          <SwiperSlide key={image}>
+        {slides.map((slide, index) => (
+          <SwiperSlide key={slide.image}>
             <div className="relative h-full w-full">
-              {/* Image */}
+              {/* Background Image */}
               <Image
-                src={image}
-                alt={`Jannath Foundation banner ${index + 1}`}
+                src={slide.image}
+                alt={slide.title + " " + slide.highlight}
                 fill
                 priority={index === 0}
+                quality={90}
                 sizes="100vw"
-                className="oobject-coverr"
+                className="object-cover object-center"
               />
 
-              {/* Main dark overlay */}
-              <div className="absolute inset-0" />
+              {/* Image Overlays */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#101d19]/95 via-[#101d19]/75 to-[#101d19]/20" />
 
-              {/* Left gradient */}
-              <div className="absolute inset-0 " />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#101d19]/90 via-transparent to-[#101d19]/30" />
 
-              <div className="absolute inset-x-0" />
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_40%,transparent_0%,rgba(0,0,0,0.2)_100%)]" />
 
+              {/* Content */}
               <div className="relative z-10 flex h-full items-center">
-                <div className="container mx-auto px-5 sm:px-8 lg:px-12">
-                  <div className="max-w-3xl text-white"></div>
+                <div className="mx-auto w-full max-w-7xl px-5 pb-16 sm:px-8 lg:px-12">
+                  <div className="max-w-3xl text-white">
+                    {/* Eyebrow */}
+                    <div className="banner-animate banner-animate-1 flex items-center gap-3">
+                      <span className="h-px w-10 bg-amber-400" />
+
+                      <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-amber-300 sm:text-xs">
+                        {slide.eyebrow}
+                      </span>
+                    </div>
+
+                    {/* Heading */}
+                    <h1 className="banner-animate banner-animate-2 mt-6 font-serif text-[2.65rem] font-bold leading-[1.12] tracking-tight sm:text-5xl md:text-6xl lg:text-[4.5rem]">
+                      {slide.title}{" "}
+                      <span className="relative inline-block text-amber-300">
+                        {slide.highlight}
+
+                        <svg
+                          aria-hidden="true"
+                          viewBox="0 0 300 14"
+                          preserveAspectRatio="none"
+                          className="absolute -bottom-2 left-0 h-2.5 w-full text-amber-400/70"
+                        >
+                          <path
+                            d="M2 10 Q 75 2, 150 8 T 298 5"
+                            stroke="currentColor"
+                            strokeWidth="4"
+                            fill="none"
+                            strokeLinecap="round"
+                          />
+                        </svg>
+                      </span>
+                    </h1>
+
+                    {/* Description */}
+                    <p className="banner-animate banner-animate-3 mt-7 max-w-xl text-sm leading-7 text-stone-200 sm:text-base sm:leading-8 md:text-lg">
+                      {slide.subtitle}
+                    </p>
+
+                    {/* CTA Buttons */}
+                    <div className="banner-animate banner-animate-4 mt-9 flex flex-wrap items-center gap-4">
+                      <Link href={slide.ctaHref} className={primaryButtonClass}>
+                        <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+
+                        <span className="relative">{slide.ctaLabel}</span>
+
+                        <ArrowRight className="relative size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                      </Link>
+
+                      {slide.secondaryLabel && (
+                        <Link
+                          href={slide.secondaryHref || "/about"}
+                          className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-white/10 px-7 py-3.5 text-sm font-bold text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-white/60 hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+                        >
+                          {slide.secondaryLabel}
+                          <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                        </Link>
+                      )}
+                    </div>
+
+                    {/* Impact Statistics */}
+                    <div className="banner-animate banner-animate-5 mt-12 hidden flex-wrap items-center gap-x-10 gap-y-5 border-t border-white/20 pt-7 sm:flex">
+                      {stats.map((stat) => (
+                        <div key={stat.label}>
+                          <div className="font-serif text-2xl font-bold text-white sm:text-3xl">
+                            {stat.value}
+                          </div>
+
+                          <div className="mt-1.5 text-[10px] font-medium uppercase tracking-[0.13em] text-stone-300 sm:text-[11px]">
+                            {stat.label}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -72,70 +209,104 @@ export default function BannerSwiper() {
         ))}
       </Swiper>
 
-      {/* =========================
-          THUMBNAILS
-      ========================== */}
-
-      <div className="absolute bottom-4 left-0 z-20 w-full sm:bottom-6">
-        <div className="container mx-auto px-4 sm:px-8 lg:px-12">
-          <Swiper
-            onSwiper={(swiper) => {
-              setThumbsSwiper(swiper);
-            }}
-            spaceBetween={8}
-            slidesPerView={4}
-            freeMode={true}
-            watchSlidesProgress={true}
-            modules={[FreeMode, Navigation, Thumbs]}
-            breakpoints={{
-              480: {
-                slidesPerView: 5,
-                spaceBetween: 8,
-              },
-
-              640: {
-                slidesPerView: 6,
-                spaceBetween: 10,
-              },
-
-              768: {
-                slidesPerView: 7,
-                spaceBetween: 10,
-              },
-
-              1024: {
-                slidesPerView: 8,
-                spaceBetween: 12,
-              },
-
-              1280: {
-                slidesPerView: 10,
-                spaceBetween: 12,
-              },
-            }}
-            className="banner-thumbs"
+      {/* Navigation Arrows */}
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-20 hidden items-center pr-6 md:flex lg:pr-10">
+        <div className="pointer-events-auto flex flex-col gap-3">
+          <button
+            type="button"
+            aria-label="Previous slide"
+            className="banner-prev flex size-12 cursor-pointer items-center justify-center rounded-full border border-white/25 bg-white/10 text-white backdrop-blur-md transition-all duration-300 hover:border-emerald-400 hover:bg-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
           >
-            {images.map((image, index) => (
-              <SwiperSlide
-                key={`thumb-${index}`}
-                className="!h-14 cursor-pointer overflow-hidden rounded-lg border-2 border-transparent opacity-70 transition-all duration-300 sm:!h-16 md:!h-20"
-              >
-                <div className="relative h-full w-full">
-                  <Image
-                    src={image}
-                    alt={`Thumbnail ${index + 1}`}
-                    fill
-                    sizes="120px"
-                    className="object-cover"
-                  />
+            <ChevronLeft className="size-5" />
+          </button>
 
-                  <div className="absolute inset-0 transition-all duration-300 hover:bg-transparent" />
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          <button
+            type="button"
+            aria-label="Next slide"
+            className="banner-next flex size-12 cursor-pointer items-center justify-center rounded-full border border-white/25 bg-white/10 text-white backdrop-blur-md transition-all duration-300 hover:border-emerald-400 hover:bg-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+          >
+            <ChevronRight className="size-5" />
+          </button>
         </div>
       </div>
+
+      {/* Slide Indicators */}
+      <div className="absolute inset-x-0 bottom-0 z-20">
+        <div className="mx-auto w-full max-w-7xl px-5 pb-6 sm:px-8 sm:pb-8 lg:px-12">
+          <div className="flex items-center justify-between gap-6">
+            <div className="flex items-center gap-2.5">
+              {slides.map((_, index) => (
+                <button
+                  key={index}
+                  type="button"
+                  aria-label={`Go to slide ${index + 1}`}
+                  aria-current={activeIndex === index ? "true" : undefined}
+                  onClick={() => swiperInstance?.slideToLoop(index)}
+                  className={`h-1 cursor-pointer rounded-full transition-all duration-500 ${
+                    activeIndex === index
+                      ? "w-11 bg-emerald-400"
+                      : "w-6 bg-white/40 hover:bg-white/80"
+                  }`}
+                />
+              ))}
+            </div>
+
+            <div className="flex items-baseline gap-2 font-mono text-white">
+              <span className="text-xl font-bold sm:text-2xl">
+                {String(activeIndex + 1).padStart(2, "0")}
+              </span>
+
+              <span className="text-xs text-white/50">
+                / {String(slides.length).padStart(2, "0")}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Animations */}
+      <style jsx global>{`
+        @keyframes bannerFadeUp {
+          from {
+            opacity: 0;
+            transform: translateY(25px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .swiper-slide-active .banner-animate {
+          animation: bannerFadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        .swiper-slide-active .banner-animate-1 {
+          animation-delay: 0.1s;
+        }
+
+        .swiper-slide-active .banner-animate-2 {
+          animation-delay: 0.25s;
+        }
+
+        .swiper-slide-active .banner-animate-3 {
+          animation-delay: 0.4s;
+        }
+
+        .swiper-slide-active .banner-animate-4 {
+          animation-delay: 0.55s;
+        }
+
+        .swiper-slide-active .banner-animate-5 {
+          animation-delay: 0.7s;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .swiper-slide-active .banner-animate {
+            animation: none;
+          }
+        }
+      `}</style>
     </section>
   );
 }

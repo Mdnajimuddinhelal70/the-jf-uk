@@ -12,14 +12,16 @@ export default function LanguageSwitcher({
   switchLocale,
 }: LanguageSwitcherProps) {
   return (
-    <div className="flex items-center gap-1 rounded-full border border-white/15 bg-white/10 p-1 backdrop-blur-sm">
+    <div className="inline-flex items-center gap-1 rounded-full border border-emerald-100 bg-slate-100/80 p-1">
       {/* Bangla */}
       <Link
         href={switchLocale("bn")}
-        className={`rounded-full px-3 py-1.5 text-xs font-semibold transition-all ${
+        aria-label="Switch to Bangla"
+        aria-current={locale === "bn" ? "page" : undefined}
+        className={`inline-flex h-8 min-w-12 items-center justify-center rounded-full px-3 text-xs font-bold transition-all duration-300 ${
           locale === "bn"
-            ? "bg-orange-500 text-primary-foreground shadow-sm"
-            : "text-white/70 hover:bg-white/10 hover:text-white"
+            ? "bg-emerald-700 text-white shadow-sm"
+            : "text-slate-600 hover:bg-white hover:text-emerald-800"
         }`}
       >
         বাংলা
@@ -28,10 +30,12 @@ export default function LanguageSwitcher({
       {/* English */}
       <Link
         href={switchLocale("en")}
-        className={`rounded-full px-3 py-1.5 text-xs font-semibold transition-all ${
+        aria-label="Switch to English"
+        aria-current={locale === "en" ? "page" : undefined}
+        className={`inline-flex h-8 min-w-12 items-center justify-center rounded-full px-3 text-xs font-bold transition-all duration-300 ${
           locale === "en"
-            ? "bg-orange-500 text-primary-foreground shadow-sm"
-            : "text-white/70 hover:bg-white/10 hover:text-white"
+            ? "bg-emerald-700 text-white shadow-sm"
+            : "text-slate-600 hover:bg-white hover:text-emerald-800"
         }`}
       >
         EN

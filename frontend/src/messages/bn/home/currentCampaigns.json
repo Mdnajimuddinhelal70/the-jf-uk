@@ -9,6 +9,8 @@
   "supporters": "{count} জন সহযোগী",
   "supportThisCampaign": "এই ক্যাম্পেইনে সহায়তা করুন",
   "exploreAllCampaigns": "সব ক্যাম্পেইন দেখুন",
+"raised": "এ পর্যন্ত সংগ্রহ",
+"impactNote": "আপনার প্রতিটি অনুদান মানুষের জীবনে ইতিবাচক পরিবর্তন আনতে সাহায্য করে।",
 
   "campaigns": {
     "education": {

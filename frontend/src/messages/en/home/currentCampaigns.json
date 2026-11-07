@@ -9,6 +9,8 @@
   "supporters": "{count} supporters",
   "supportThisCampaign": "Support This Campaign",
   "exploreAllCampaigns": "Explore All Campaigns",
+  "raised": "Raised so far",
+"impactNote": "Every contribution helps us create a meaningful difference.",
 
   "campaigns": {
     "education": {
