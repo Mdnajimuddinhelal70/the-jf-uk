@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
+
 import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { useTranslations } from "next-intl";
 import {
@@ -65,24 +66,34 @@ export default function AboutContactSection() {
   const [error, setError] = useState(false);
 
   return (
-    <section className="bg-background py-20 sm:py-24 lg:py-28">
+    <section className="relative isolate overflow-hidden bg-[#fbfbf7] py-20 sm:py-24 lg:py-28">
+      {/* Background decoration — harmonized with Donate section */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
+      >
+        <div className="absolute -left-48 top-0 size-[420px] rounded-full bg-emerald-100/60 blur-[120px]" />
+        <div className="absolute -right-48 bottom-0 size-[420px] rounded-full bg-amber-100/40 blur-[120px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(#14532d_0.7px,transparent_0.7px)] bg-[size:32px_32px] opacity-[0.035]" />
+      </div>
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-10">
           {/* Contact Information */}
-          <Card className="bg-orange-200 overflow-hidden border-border/60 shadow-sm">
+          <Card className="overflow-hidden rounded-2xl border-emerald-900/10 bg-white shadow-[0_24px_60px_-30px_rgba(6,50,30,0.25)] ring-1 ring-emerald-900/10">
             <CardContent className="p-7 sm:p-9">
               {/* Eyebrow */}
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-800">
                 {t("contactInfo.eyebrow")}
               </p>
 
               {/* Heading */}
-              <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+              <h2 className="mt-3 font-serif text-3xl font-bold tracking-tight text-stone-950 sm:text-4xl">
                 {t("contactInfo.title")}
               </h2>
 
               {/* Description */}
-              <p className="mt-4 text-sm leading-7 text-muted-foreground sm:text-base">
+              <p className="mt-4 text-sm leading-7 text-stone-600 sm:text-base">
                 {t("contactInfo.description")}
               </p>
 
@@ -95,20 +106,20 @@ export default function AboutContactSection() {
                     <Link
                       key={item.key}
                       href={item.href}
-                      className="group flex gap-4"
+                      className="group flex gap-4 rounded-xl transition-colors"
                     >
                       {/* Icon */}
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary">
-                        <Icon className="h-5 w-5 text-primary transition-colors group-hover:text-primary-foreground" />
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700 ring-1 ring-emerald-900/10 transition-all group-hover:bg-emerald-700 group-hover:text-white">
+                        <Icon className="h-5 w-5" />
                       </div>
 
                       {/* Content */}
                       <div className="min-w-0">
-                        <p className="text-sm font-semibold">
+                        <p className="text-sm font-semibold text-stone-900">
                           {t(`contactInfo.items.${item.key}.title`)}
                         </p>
 
-                        <p className="mt-1 text-sm leading-6 text-muted-foreground transition-colors group-hover:text-primary">
+                        <p className="mt-1 text-sm leading-6 text-stone-600 transition-colors group-hover:text-emerald-800">
                           {t(`contactInfo.items.${item.key}.value`)}
                         </p>
                       </div>
@@ -118,8 +129,10 @@ export default function AboutContactSection() {
               </div>
 
               {/* Social Links */}
-              <div className="mt-9 border-t pt-7">
-                <p className="text-sm font-semibold">{t("social.title")}</p>
+              <div className="mt-9 border-t border-emerald-900/10 pt-7">
+                <p className="text-sm font-semibold text-stone-900">
+                  {t("social.title")}
+                </p>
 
                 <div className="mt-4 flex items-center gap-2">
                   {socialLinks.map((social) => {
@@ -130,7 +143,7 @@ export default function AboutContactSection() {
                         key={social.key}
                         href={social.href}
                         aria-label={t(`social.${social.key}`)}
-                        className="flex h-10 w-10 items-center justify-center rounded-full border text-muted-foreground transition-all hover:border-primary hover:bg-primary hover:text-primary-foreground"
+                        className="flex h-10 w-10 items-center justify-center rounded-full border border-emerald-900/15 bg-white text-emerald-800 transition-all hover:border-emerald-700 hover:bg-emerald-700 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2"
                       >
                         <Icon className="h-4 w-4" />
                       </Link>
@@ -142,27 +155,26 @@ export default function AboutContactSection() {
           </Card>
 
           {/* Contact Form */}
-          {/* Contact Form */}
-          <Card className="border-border/60 bg-orange-200 shadow-sm">
+          <Card className="overflow-hidden rounded-2xl border-emerald-900/10 bg-white shadow-[0_24px_60px_-30px_rgba(6,50,30,0.25)] ring-1 ring-emerald-900/10">
             <CardContent className="p-7 sm:p-9">
               {/* Form Header */}
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-800">
                   {t("form.eyebrow")}
                 </p>
 
-                <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+                <h2 className="mt-3 font-serif text-3xl font-bold tracking-tight text-stone-950 sm:text-4xl">
                   {t("form.title")}
                 </h2>
 
-                <p className="mt-4 text-sm leading-7 text-muted-foreground sm:text-base">
+                <p className="mt-4 text-sm leading-7 text-stone-600 sm:text-base">
                   {t("form.description")}
                 </p>
               </div>
 
               {/* Success Message */}
               {success && (
-                <div className="mt-6 rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-sm font-medium text-green-700">
+                <div className="mt-6 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-800">
                   Your message has been sent successfully. Thank you for
                   contacting us.
                 </div>
@@ -230,7 +242,7 @@ export default function AboutContactSection() {
                       name="name"
                       type="text"
                       placeholder={t("form.fields.name.placeholder")}
-                      className="h-11"
+                      className="h-11 border-emerald-900/15 bg-white focus-visible:ring-emerald-400"
                       required
                     />
                   </div>
@@ -246,7 +258,7 @@ export default function AboutContactSection() {
                       name="email"
                       type="email"
                       placeholder={t("form.fields.email.placeholder")}
-                      className="h-11"
+                      className="h-11 border-emerald-900/15 bg-white focus-visible:ring-emerald-400"
                       required
                     />
                   </div>
@@ -265,7 +277,7 @@ export default function AboutContactSection() {
                       name="phone"
                       type="tel"
                       placeholder={t("form.fields.phone.placeholder")}
-                      className="h-11"
+                      className="h-11 border-emerald-900/15 bg-white focus-visible:ring-emerald-400"
                     />
                   </div>
 
@@ -280,7 +292,7 @@ export default function AboutContactSection() {
                       name="subject"
                       type="text"
                       placeholder={t("form.fields.subject.placeholder")}
-                      className="h-11"
+                      className="h-11 border-emerald-900/15 bg-white focus-visible:ring-emerald-400"
                       required
                     />
                   </div>
@@ -296,7 +308,7 @@ export default function AboutContactSection() {
                     id="message"
                     name="message"
                     placeholder={t("form.fields.message.placeholder")}
-                    className="min-h-[150px] resize-none"
+                    className="min-h-[150px] resize-none border-emerald-900/15 bg-white focus-visible:ring-emerald-400"
                     required
                   />
                 </div>
@@ -305,7 +317,7 @@ export default function AboutContactSection() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-md bg-orange-600 px-6 text-sm font-semibold text-white transition-all hover:bg-orange-700 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+                  className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-full bg-emerald-700 px-6 text-sm font-bold text-white shadow-md shadow-emerald-950/15 transition-all hover:bg-emerald-800 hover:shadow-lg active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
                 >
                   {isSubmitting ? "Sending..." : t("form.submit")}
 
