@@ -1,4 +1,3 @@
-
 {
   "Donate": {
     "badge": "Make a Difference",
@@ -6,20 +5,27 @@
     "titleHighlight": "Change Lives",
     "description": "Your generous support helps us continue our humanitarian, educational, and community development initiatives.",
 
-    "bkash": {
-      "title": "bKash",
-      "description": "Support us through bKash",
-      "numberLabel": "bKash Number",
-      "note": "Please send your donation to the bKash number above."
-    },
-
-    "bank": {
-      "title": "Bank Transfer",
-      "description": "Support us through bank transfer",
+    "foundation": {
+      "label": "United Kingdom",
+      "title": "The Jannath Foundation UK",
+      "accountNumber": "Account Number",
+      "sortCode": "Sort Code",
       "accountName": "Account Name",
       "bankName": "Bank Name",
+      "bankNameValue": "Bank details available on request",
+      "note": "Please use the reference \"Donation\" when transferring so we can identify your contribution."
+    },
+
+    "orphanage": {
+      "label": "Bangladesh",
+      "title": "Al Arafah Madrasa & Orphanage",
       "accountNumber": "Account Number",
-      "sortCode": "Sort Code"
+      "accountName": "Account Name",
+      "bankName": "Bank Name",
+      "bankNameValue": "Bank details available on request",
+      "branch": "Branch",
+      "branchValue": "Birendra Nagar Branch",
+      "note": "Please use the reference \"Donation\" when transferring so we can identify your contribution."
     },
 
     "copy": "Copy",
@@ -27,4 +33,3 @@
     "bottomNote": "Every contribution helps us continue our work and make a meaningful difference in the lives of people and communities."
   }
 }
-
