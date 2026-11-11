@@ -72,7 +72,6 @@ const stats = [
   { value: "15+", label: "Years of Service" },
 ];
 
-// Shared primary button design
 const primaryButtonClass =
   "group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-emerald-700 px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-950/20 transition-all duration-300 hover:-translate-y-1 hover:bg-emerald-800 hover:shadow-xl hover:shadow-emerald-950/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950";
 
@@ -102,32 +101,37 @@ export default function BannerSwiper() {
         onSwiper={setSwiperInstance}
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
         modules={[Autoplay, Navigation, EffectFade]}
-        className="banner-main h-[620px] w-full sm:h-[680px] md:h-[740px] lg:h-[800px]"
+        className="banner-main h-[780px] w-full sm:h-[820px] md:h-[740px] lg:h-[800px]"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={slide.image}>
-            <div className="relative h-full w-full">
-              {/* Background Image */}
-              <Image
-                src={slide.image}
-                alt={slide.title + " " + slide.highlight}
-                fill
-                priority={index === 0}
-                quality={90}
-                sizes="100vw"
-                className="object-cover object-center"
-              />
+            <div className="relative flex h-full w-full flex-col overflow-hidden bg-[#101d19] md:block">
+              {/* Responsive Banner Image */}
+              <div className="relative aspect-video w-full shrink-0 overflow-hidden bg-[#101d19] md:absolute md:inset-0 md:aspect-auto">
+                <Image
+                  src={slide.image}
+                  alt={slide.title + " " + slide.highlight}
+                  fill
+                  priority={index === 0}
+                  quality={90}
+                  sizes="100vw"
+                  className="object-contain md:object-cover md:object-center"
+                />
 
-              {/* Image Overlays */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#101d19]/95 via-[#101d19]/75 to-[#101d19]/20" />
+                {/* Mobile image overlay */}
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#101d19]/5 to-[#101d19]/25 md:hidden" />
+              </div>
 
-              <div className="absolute inset-0 bg-gradient-to-t from-[#101d19]/90 via-transparent to-[#101d19]/30" />
+              {/* Desktop Image Overlays */}
+              <div className="absolute inset-0 hidden bg-gradient-to-r from-[#101d19]/95 via-[#101d19]/75 to-[#101d19]/20 md:block" />
 
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_40%,transparent_0%,rgba(0,0,0,0.2)_100%)]" />
+              <div className="absolute inset-0 hidden bg-gradient-to-t from-[#101d19]/90 via-transparent to-[#101d19]/30 md:block" />
 
-              {/* Content */}
-              <div className="relative z-10 flex h-full items-center">
-                <div className="mx-auto w-full max-w-7xl px-5 pb-16 sm:px-8 lg:px-12">
+              <div className="absolute inset-0 hidden bg-[radial-gradient(ellipse_at_70%_40%,transparent_0%,rgba(0,0,0,0.2)_100%)] md:block" />
+
+              {/* Content Area */}
+              <div className="relative z-10 flex min-h-0 flex-1 items-start bg-gradient-to-b from-[#101d19] via-[#101d19] to-[#132a22] md:h-full md:items-center md:bg-none">
+                <div className="mx-auto w-full max-w-7xl px-5 pt-7 pb-24 sm:px-8 sm:pt-8 md:px-8 md:pt-0 md:pb-16 lg:px-12">
                   <div className="max-w-3xl text-white">
                     {/* Eyebrow */}
                     <div className="banner-animate banner-animate-1 flex items-center gap-3">
@@ -139,7 +143,7 @@ export default function BannerSwiper() {
                     </div>
 
                     {/* Heading */}
-                    <h1 className="banner-animate banner-animate-2 mt-6 font-serif text-[2.65rem] font-bold leading-[1.12] tracking-tight sm:text-5xl md:text-6xl lg:text-[4.5rem]">
+                    <h1 className="banner-animate banner-animate-2 mt-5 font-serif text-[2.35rem] font-bold leading-[1.12] tracking-tight sm:text-5xl md:mt-6 md:text-6xl lg:text-[4.5rem]">
                       {slide.title}{" "}
                       <span className="relative inline-block text-amber-300">
                         {slide.highlight}
@@ -162,12 +166,12 @@ export default function BannerSwiper() {
                     </h1>
 
                     {/* Description */}
-                    <p className="banner-animate banner-animate-3 mt-7 max-w-xl text-sm leading-7 text-stone-200 sm:text-base sm:leading-8 md:text-lg">
+                    <p className="banner-animate banner-animate-3 mt-6 max-w-xl text-sm leading-7 text-stone-200 sm:text-base sm:leading-8 md:mt-7 md:text-lg">
                       {slide.subtitle}
                     </p>
 
                     {/* CTA Buttons */}
-                    <div className="banner-animate banner-animate-4 mt-9 flex flex-wrap items-center gap-4">
+                    <div className="banner-animate banner-animate-4 mt-7 flex flex-wrap items-center gap-3 sm:gap-4 md:mt-9">
                       <Link href={slide.ctaHref} className={primaryButtonClass}>
                         <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
 
@@ -182,13 +186,14 @@ export default function BannerSwiper() {
                           className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-white/10 px-7 py-3.5 text-sm font-bold text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-white/60 hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
                         >
                           {slide.secondaryLabel}
+
                           <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
                         </Link>
                       )}
                     </div>
 
                     {/* Impact Statistics */}
-                    <div className="banner-animate banner-animate-5 mt-12 hidden flex-wrap items-center gap-x-10 gap-y-5 border-t border-white/20 pt-7 sm:flex">
+                    <div className="banner-animate banner-animate-5 mt-12 hidden flex-wrap items-center gap-x-10 gap-y-5 border-t border-white/20 pt-7 md:flex">
                       {stats.map((stat) => (
                         <div key={stat.label}>
                           <div className="font-serif text-2xl font-bold text-white sm:text-3xl">
